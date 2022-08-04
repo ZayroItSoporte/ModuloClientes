@@ -55,6 +55,7 @@
             z-index: 7;
         }
     </style>
+
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -195,7 +196,6 @@
             </ul>
         </nav>
         <!-- /.navbar -->
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -229,7 +229,7 @@
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav id="sideBar" class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-header">Menu</li>
@@ -243,7 +243,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="~/Dashboard/AltaCliente" class="nav-link">
+                                    <a id="AltaCliente" class="nav-link pagina">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar Cliente</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="ListadoClientes" class="nav-link pagina">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Listado</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-money-check"></i>
+                                <p>
+                                    Tabuladores
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard v1</p>
                                     </a>
@@ -262,36 +286,6 @@
                                 </li>
                             </ul>
                         </li>
-
-                        <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-money-check"></i>
-                            <p>
-                                Tabuladores
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index2.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
-                                </a>
-                            </li>
-                        </ul>
-                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -300,9 +294,8 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div id="container" class="content-wrapper">
             <!-- Content Header (Page header) -->
-            
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -329,5 +322,27 @@
     <script src="~/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/dist/js/demo.js"></script>
+
+    <script>
+
+        $('#sideBar .pagina').on('click', function () {
+
+            var vista = this.id;
+
+            $.ajax({
+                type: "POST",
+                url: '/Dashboard/' + vista,
+                success: function (data) {
+                    $('#container').html(data);
+                },
+                error: function () {
+                    $('#container').html('<span class="login100-form-title p-b-35">OCURRIO UN ERROR</span>');
+                }
+            });
+
+        });
+
+    </script>
+
 </body>
 </html>

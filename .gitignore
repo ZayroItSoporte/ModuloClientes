@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+ModuloClientes/.vs/ModuloClientes/config/applicationhost.config
+ModuloClientes/.vs/ModuloClientes/v17/.suo
+ModuloClientes/ModuloClientes/bin/ModuloClientes.dll
+ModuloClientes/ModuloClientes/bin/ModuloClientes.pdb
+ModuloClientes/ModuloClientes/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ModuloClientes/ModuloClientes/obj/Debug/ModuloClientes.csproj.AssemblyReference.cache
+ModuloClientes/ModuloClientes/obj/Debug/ModuloClientes.csproj.CoreCompileInputs.cache
+ModuloClientes/ModuloClientes/obj/Debug/ModuloClientes.dll
+ModuloClientes/ModuloClientes/obj/Debug/ModuloClientes.pdb
