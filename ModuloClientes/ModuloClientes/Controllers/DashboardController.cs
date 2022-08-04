@@ -14,7 +14,7 @@ namespace ModuloClientes.Controllers
             return View();
         }
 
-        public ActionResult AltaCliente()
+        public ActionResult ClienteAlta()
         {
             return View();
         }
