@@ -13,5 +13,10 @@ namespace ModuloClientes.Controllers
         {
             return View();
         }
+
+        public ActionResult AltaCliente()
+        {
+            return View();
+        }
     }
 }
