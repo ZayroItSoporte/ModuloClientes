@@ -1,29 +1,124 @@
 ﻿
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Datos Generales</h3>
+                    <div class="card-tools">
+                        <button class="btn btn-tool" type="button" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-
+                        <label for="txtNombre">Nombre:</label>
+                        <input type="text" id="txtNombre" placeholder="Nombre Empresa SA de CV" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDireccion">Direccion:</label>
+                        <input type="text" id="txtDireccion" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="txtNumInt">Número Interior:</label>
+                            <input type="text" id="txtNumInt" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtNumInt">Número Exterior:</label>
+                            <input type="text" id="txtNumExt" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="ddlCiudad">Ciudad:</label>
+                            <select id="ddlCiudad" class="form-control">
+                                <option value="Seleccionar">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="ddlEstado">Estado:</label>
+                            <select id="ddlEstado" class="form-control">
+                                <option value="Seleccionar">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="ddlPais">País:</label>
+                            <select id="ddlPais" class="form-control">
+                                <option value="Seleccionar">Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="txtCP">CP:</label>
+                            <input type="text" id="txtCP" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtRFC">RFC:</label>
+                            <input type="text" id="txtRFC" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtNSS">NSS:</label>
+                            <input type="text" id="txtNSS" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtIRS">IRS:</label>
+                            <input type="text" id="txtIRS" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="txtTelefono">Telefono:</label>
+                            <input type="text" id="txtTelefono" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtTelefonod">Telefono 2:</label>
+                            <input type="text" id="txtTelefonod" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtUR">URL:</label>
+                            <input type="text" id="txtUR" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtFAX">FAX:</label>
+                            <input type="text" id="txtFAX" class="form-control" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <div class="form-group">
-
+                    <h3 class="card-title">Crédito</h3>
+                    <div class="card-tools">
+                        <button class="btn btn-tool" type="button" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="card-body">
-
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="lblCliDesde">Cliente desde:</label>
+                            <label id="lblCliDesde" class="form-control"></label>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliManejosEx</label>
+                            <input type="number" id="txtManejosEx" step="0.01" value="0.0" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label>CliManejosEx</label>
+                            <input type="number" id="txtServCompEx" step="0.01" value="0.0" class="form-control" />
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
