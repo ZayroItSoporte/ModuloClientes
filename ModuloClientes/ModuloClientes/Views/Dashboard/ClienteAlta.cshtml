@@ -1,5 +1,6 @@
 ﻿
 <div class="container-fluid">
+    @* Datos generales *@
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary">
@@ -71,11 +72,11 @@
                     <div class="row">
                         <div class="col form-group">
                             <label for="txtTelefono">Telefono:</label>
-                            <input type="text" id="txtTelefono" class="form-control" />
+                            <input type="text" id="txtTelefono" class="form-control" placeholder="(___) ___-____" />
                         </div>
                         <div class="col form-group">
                             <label for="txtTelefonod">Telefono 2:</label>
-                            <input type="text" id="txtTelefonod" class="form-control" />
+                            <input type="text" id="txtTelefonod" class="form-control" placeholder="(___) ___-____" />
                         </div>
                         <div class="col form-group">
                             <label for="txtUR">URL:</label>
@@ -90,11 +91,12 @@
             </div>
         </div>
     </div>
+    @* Otros datos *@
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Crédito</h3>
+                    <h3 class="card-title">Otros datos</h3>
                     <div class="card-tools">
                         <button class="btn btn-tool" type="button" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
@@ -108,17 +110,108 @@
                             <label id="lblCliDesde" class="form-control"></label>
                         </div>
                         <div class="col form-group">
-                            <label>CliManejosEx</label>
+                            <label for="txtManejosEx">CliManejosEx:</label>
                             <input type="number" id="txtManejosEx" step="0.01" value="0.0" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>CliManejosEx</label>
+                            <label for="txtServCompEx">CliServCompEx:</label>
                             <input type="number" id="txtServCompEx" step="0.01" value="0.0" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtServCompIm">CliServCompIm:</label>
+                            <input type="number" id="txtServCompIm" step="0.01" value="0.0" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>CliHandlingIm:</label>
+                            <input type="text" id="txtCliHandlingIm" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliAcumTransAñoP:</label>
+                            <input type="number" id="txtCliAcumTransAñoP" step="1" value="0" min="0" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliAcumTransAñoD:</label>
+                            <input type="number" id="txtCliAcumTransAñoD" step="1" value="0" min="0" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>CliAcumPesos</label>
+                            <input type="text" id="txtCliAcumPesos" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliAcumDolar</label>
+                            <input type="text" id="txtCliAcumDolar" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliPagaPesos</label>
+                            <input type="text" id="txtCliPagaPesos" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>CliPagaDolar</label>
+                            <input type="text" id="txtCliPagaDolar" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>CliTotTrans</label>
+                            <input type="number" id="txtCliTotTrans" value="" class="form-control"/>
                         </div>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </div>
+    @* Lo que sea *@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Lo que sea</h3>
+                    <div class="card-tools">
+                        <button class="btn btn-tool" type="button" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>TabID</label>
+                            <input type="number" id="txtTabID" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>TabIDImp</label>
+                            <input type="number" id="txtTabIDImp" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>TabIDCtaAm</label>
+                            <input type="number" id="txtTabIDCtaAm" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>TipPtoID</label>
+                            <input type="text" id="txtTipPtoID" value="" class="form-control"/>
+                        </div>
+                        <div class="col form-group">
+                            <label>TipPtoID1</label>
+                            <input type="text" id="txtTipPtoID1" value="" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="chbCliRelAABCli" class="custom-control-input" />
+                                <label class="custom-control-label" for="chbCliRelAABCli">CliRelAABCli</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
