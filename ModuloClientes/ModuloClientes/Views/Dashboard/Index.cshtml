@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
 
@@ -321,9 +322,32 @@
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="~/dist/js/demo.js"></script>
+    @*<script src="~/dist/js/demo.js"></script>*@
 
     <script>
+
+        //#region Number
+        $("body").on("keypress", '.number', function (evt) {
+            var self = $(this);
+            self.val(self.val().replace(/[^0-9\.]/g, ''));
+            if ((evt.which != 46 || self.val().indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
+                evt.preventDefault();
+            }
+        });
+
+        $('body').on('change blur', '.number', function () {
+            if ($(this).val().trim().length === 0) {
+                $(this).val(0);
+            }
+        });
+
+        $('body').on('focus', '.number', function () {
+            var value = $(this).val().trim();
+            if (value == "0") {
+                $(this).val("");
+            }
+        });
+        //#endregion
 
         $('#sideBar .pagina').on('click', function () {
 

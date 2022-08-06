@@ -1,0 +1,160 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Clientes</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Listado de Clientes</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Listado de Clientes</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive-lg p-b-25">
+                            <table id="table"
+                                   data-toolbar="#toolbar"
+                                   data-detail-view="true"
+                                   data-detail-formatter="detailFormatter"
+                                   data-search="true"
+                                   class="table table-hover">
+                                <thead class="header">
+                                    <tr>
+                                        <th data-field="Numero" align="left">No.</th>
+                                        <th data-field="Nombre" align="left">Nombre</th>
+                                        <th data-field="RFC" align="left">RFC</th>
+                                        <th data-field="CURP" align="left">CURP</th>
+                                        <th data-field="CliSSN" align="left">SSN</th>
+                                        <th data-field="CliActivo" data-formatter="cliActivoFormatter" align="left">Estado</th>
+                                        <th data-formatter="accionesFormatter" class="acciones" align="center">Acciones</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div><!--.card-body-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link href="~/plugins/bootstra-table 5/bootstrap-table.css" rel="stylesheet" />
+
+<script src="~/plugins/bootstra-table 5/bootstrap-table.js"></script>
+<script src="~/plugins/bootstra-table 5/bootstrap-table-locale-all.js"></script>
+
+<script>
+
+    var data = [
+        {
+            "Numero": 1111,
+            "Nombre": "test0",
+            "RFC": "test0",
+            "CURP": "test0",
+            "CliActivo": true,
+            "CliSSN": 1234
+        },
+        {
+            "Numero": 2222,
+            "Nombre": "test0",
+            "RFC": "test0",
+            "CURP": "test0",
+            "CliActivo": false,
+            "CliSSN": 1234
+        },
+    ];
+
+    $('#table').bootstrapTable({
+        locale: "es-MX",
+        cache: false,
+        data: data,
+        paginationPreText: '<i class="fa fa-arrow-left"></i> Anterior',
+        paginationNextText: '<i class="fa fa-arrow-right"></i> Siguiente',
+        pagination: true,
+        pageSize: 50,
+        pageList: [25, 50, 100],
+        //sortName: 'FechaCreacion',
+        sortOrder: 'desc',
+    });
+
+    //#region FORMATTER'S
+
+    function detailFormatter(index, row) {
+
+
+        var html = '<div class="row">' +
+
+            '<div class="col-6">' +
+
+            '<div class="card card-primary">' +
+            '<div class="card-header"><h5 class="card-header">Ubicacion</h5></div>' +
+            '<div class="card-body">' +
+            '<div class="row">' +
+            '<div class="col-3"><b>Ciudad: </b>' + row.CIUDAD + '</div>' +
+            '<div class="col-3"><b>Estado: </b>' + row.Est + '</div>' +
+            '<div class="col-3"><b>Pais: </b>' + row.Pais + '</div>' +
+            '<div class="col-3"><b>CP: </b>' + row.CliCodPost + '</div>' +
+            '<div class="col-3"><b>Direccion: </b>' + row.DIRECCION + '</div>' +
+            '<div class="col-3"><b>Colonia: </b>' + row.CliColonia + '</div>' +
+            '<div class="col-3"><b>Esquina: </b>' + row.Esquina + '</div>' +
+            '<div class="col-3"><b>Sector: </b>' + row.Sector + '</div>' +
+            '</div>' + //row
+            '</div>' + //card-body
+            '</div>' + //card
+            '</div>' + //col-6
+
+            '<div class="col-6">' +
+
+            '<div class="card card-primary">' +
+            '<div class="card-header"><h5 class="card-header">Datos Generales</h5></div>' +
+            '<div class="card-body">' +
+            '<div class="row">' +
+            '<div class="col-3"><b>Telefonos: </b>' + row.TELEFONO + ' | ' + row.Telefono2 + '</div>' +
+            '<div class="col-3"><b>Pagina Web: </b>' + row.URL + '</div>' +
+            '<div class="col-3"><b>Fax: </b>' + row.FAX + '</div>' +
+            '<div class="col-3"><b>CP: </b>' + row.CliCodPost + '</div>' +
+            '</div>' + //row
+            '</div>' + //card-body
+            '</div>' + //card
+            '</div>'; //col-6
+
+
+
+
+        return html + '</div>';
+    }
+
+    function cliActivoFormatter(value, row, index) {
+        return '<div class="text-center">' + (value ?
+            '<span class="badge p-2 btn-success" style="color: white; width: 80%;">Activo</span>' :
+            '<span class="badge p-2 btn-secondary" style="color: white; width: 80%;">Inactivo</span>') +
+            '</div>';
+    }
+
+    function accionesFormatter(value, row, index) {
+        var html = '<div id="btnAcciones" class="text-center">' +
+            '<button style="width: 40%; margin-right: 5px;" onclick="" type="button" title="Modificar Cliente" class="btn btn-success"> <i class="fa fa-edit"></i></button >' +
+            '<button style="width: 40%; margin-right: 5px;" onclick="" type="button" title="Dar de baja" class="btn btn-danger "><i class="fa fa-trash"></i></button>' +
+            '</div >';
+
+        return html;
+    }
+
+    //endregion
+
+</script>
