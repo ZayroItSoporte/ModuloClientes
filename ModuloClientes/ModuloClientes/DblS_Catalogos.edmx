@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbIS_CatalogosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="CLIENTE" />
+          </Key>
+          <Property Name="CLIENTE" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="NOMBRE" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="DIRECCION" Type="nvarchar" MaxLength="80" />
+          <Property Name="ClieNumInt" Type="nvarchar" MaxLength="10" />
+          <Property Name="ClieNumExt" Type="nvarchar" MaxLength="10" />
+          <Property Name="CIUDAD" Type="nvarchar" MaxLength="80" />
+          <Property Name="EstID" Type="nvarchar" MaxLength="3" />
+          <Property Name="PaisID" Type="nvarchar" MaxLength="3" />
+          <Property Name="CliCodPost" Type="nvarchar" MaxLength="6" />
+          <Property Name="CliRFC" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="CliSSN" Type="int" />
+          <Property Name="CliIRS" Type="nvarchar" MaxLength="15" />
+          <Property Name="TELEFONO" Type="nvarchar" MaxLength="15" />
+          <Property Name="Telefono2" Type="nvarchar" MaxLength="50" />
+          <Property Name="URL" Type="nvarchar" MaxLength="50" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="CliDesde" Type="smalldatetime" />
+          <Property Name="CliManejosEx" Type="real" />
+          <Property Name="CliServCompEx" Type="real" />
+          <Property Name="CliServCompIm" Type="real" />
+          <Property Name="CliHandlingIm" Type="real" />
+          <Property Name="CliAcumTransAñoP" Type="int" />
+          <Property Name="CliAcumTransAñoD" Type="int" />
+          <Property Name="CliAcumPesos" Type="money" />
+          <Property Name="CliAcumDolar" Type="money" />
+          <Property Name="CliPagaPesos" Type="money" />
+          <Property Name="CliPagaDolar" Type="money" />
+          <Property Name="CliTotTrans" Type="int" />
+          <Property Name="TabID" Type="real" />
+          <Property Name="TabIDImp" Type="real" />
+          <Property Name="TabIDCtaAm" Type="real" />
+          <Property Name="TipPtoID" Type="nvarchar" MaxLength="2" />
+          <Property Name="TipPtoID1" Type="nvarchar" MaxLength="2" />
+          <Property Name="CliRelAABCli" Type="bit" />
+          <Property Name="CliRelAABPro" Type="bit" />
+          <Property Name="CliRelAABPag" Type="bit" />
+          <Property Name="CliRelAABDes" Type="bit" />
+          <Property Name="CliFactA" Type="nvarchar" MaxLength="4" />
+          <Property Name="CliViaMensajes" Type="smallint" />
+          <Property Name="CliFacDescuento" Type="real" />
+          <Property Name="CliManejosEsp" Type="bit" />
+          <Property Name="CliFactHonorarios" Type="real" />
+          <Property Name="CliFactHonorariosImp" Type="real" />
+          <Property Name="RegOrigId" Type="nvarchar" MaxLength="1" />
+          <Property Name="MetValID" Type="nvarchar" MaxLength="2" />
+          <Property Name="CliPITEX" Type="bit" />
+          <Property Name="CliMaquiladora" Type="bit" />
+          <Property Name="CliPasswordInternet" Type="nvarchar" MaxLength="50" />
+          <Property Name="CliEnvaMatriz" Type="bit" />
+          <Property Name="CliRegla8a" Type="bit" />
+          <Property Name="CliFraccionR8a" Type="nvarchar" MaxLength="10" />
+          <Property Name="CliColonia" Type="nvarchar" MaxLength="40" />
+          <Property Name="CliEsquina" Type="nvarchar" MaxLength="20" />
+          <Property Name="CliSector" Type="int" />
+          <Property Name="ImpAraID" Type="nvarchar" MaxLength="10" />
+          <Property Name="IDProSec" Type="nvarchar" MaxLength="10" />
+          <Property Name="NumClienteTFM" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActaConstitutiva" Type="bit" />
+          <Property Name="CIF" Type="bit" />
+          <Property Name="CURP" Type="nvarchar" MaxLength="50" />
+          <Property Name="R1-SHCP" Type="bit" />
+          <Property Name="AgrupCliCtaMex" Type="char" MaxLength="10" />
+          <Property Name="AgrupCliCtaAm" Type="char" MaxLength="10" />
+          <Property Name="AgrupCliFede" Type="char" MaxLength="10" />
+          <Property Name="AltaPor" Type="char" MaxLength="10" />
+          <Property Name="FHAltaPor" Type="smalldatetime" />
+          <Property Name="CliObs" Type="ntext" />
+          <Property Name="Actualizo" Type="char" MaxLength="10" />
+          <Property Name="FHActualizo" Type="smalldatetime" />
+          <Property Name="NombreCorto" Type="char" MaxLength="25" />
+          <Property Name="ActivarPS" Type="bit" />
+          <Property Name="ActivarR8va" Type="bit" />
+          <Property Name="CliActivo" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="DbIS_CatalogosModelStoreContainer">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbIS_CatalogosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="CLIENTE" />
+          </Key>
+          <Property Name="CLIENTE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ClieNumInt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ClieNumExt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CIUDAD" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="EstID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PaisID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CliCodPost" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CliRFC" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CliSSN" Type="Int32" />
+          <Property Name="CliIRS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CliDesde" Type="DateTime" Precision="0" />
+          <Property Name="CliManejosEx" Type="Single" />
+          <Property Name="CliServCompEx" Type="Single" />
+          <Property Name="CliServCompIm" Type="Single" />
+          <Property Name="CliHandlingIm" Type="Single" />
+          <Property Name="CliAcumTransAñoP" Type="Int32" />
+          <Property Name="CliAcumTransAñoD" Type="Int32" />
+          <Property Name="CliAcumPesos" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CliAcumDolar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CliPagaPesos" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CliPagaDolar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CliTotTrans" Type="Int32" />
+          <Property Name="TabID" Type="Single" />
+          <Property Name="TabIDImp" Type="Single" />
+          <Property Name="TabIDCtaAm" Type="Single" />
+          <Property Name="TipPtoID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="TipPtoID1" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CliRelAABCli" Type="Boolean" />
+          <Property Name="CliRelAABPro" Type="Boolean" />
+          <Property Name="CliRelAABPag" Type="Boolean" />
+          <Property Name="CliRelAABDes" Type="Boolean" />
+          <Property Name="CliFactA" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CliViaMensajes" Type="Int16" />
+          <Property Name="CliFacDescuento" Type="Single" />
+          <Property Name="CliManejosEsp" Type="Boolean" />
+          <Property Name="CliFactHonorarios" Type="Single" />
+          <Property Name="CliFactHonorariosImp" Type="Single" />
+          <Property Name="RegOrigId" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="MetValID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CliPITEX" Type="Boolean" />
+          <Property Name="CliMaquiladora" Type="Boolean" />
+          <Property Name="CliPasswordInternet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CliEnvaMatriz" Type="Boolean" />
+          <Property Name="CliRegla8a" Type="Boolean" />
+          <Property Name="CliFraccionR8a" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CliColonia" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CliEsquina" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CliSector" Type="Int32" />
+          <Property Name="ImpAraID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDProSec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NumClienteTFM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActaConstitutiva" Type="Boolean" />
+          <Property Name="CIF" Type="Boolean" />
+          <Property Name="CURP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="R1_SHCP" Type="Boolean" />
+          <Property Name="AgrupCliCtaMex" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="AgrupCliCtaAm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="AgrupCliFede" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="AltaPor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FHAltaPor" Type="DateTime" Precision="0" />
+          <Property Name="CliObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Actualizo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="FHActualizo" Type="DateTime" Precision="0" />
+          <Property Name="NombreCorto" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="ActivarPS" Type="Boolean" />
+          <Property Name="ActivarR8va" Type="Boolean" />
+          <Property Name="CliActivo" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="DbIS_CatalogosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbIS_CatalogosModelStoreContainer" CdmEntityContainer="DbIS_CatalogosEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="DbIS_CatalogosModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="ClieNumInt" ColumnName="ClieNumInt" />
+                <ScalarProperty Name="ClieNumExt" ColumnName="ClieNumExt" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+                <ScalarProperty Name="EstID" ColumnName="EstID" />
+                <ScalarProperty Name="PaisID" ColumnName="PaisID" />
+                <ScalarProperty Name="CliCodPost" ColumnName="CliCodPost" />
+                <ScalarProperty Name="CliRFC" ColumnName="CliRFC" />
+                <ScalarProperty Name="CliSSN" ColumnName="CliSSN" />
+                <ScalarProperty Name="CliIRS" ColumnName="CliIRS" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="CliDesde" ColumnName="CliDesde" />
+                <ScalarProperty Name="CliManejosEx" ColumnName="CliManejosEx" />
+                <ScalarProperty Name="CliServCompEx" ColumnName="CliServCompEx" />
+                <ScalarProperty Name="CliServCompIm" ColumnName="CliServCompIm" />
+                <ScalarProperty Name="CliHandlingIm" ColumnName="CliHandlingIm" />
+                <ScalarProperty Name="CliAcumTransAñoP" ColumnName="CliAcumTransAñoP" />
+                <ScalarProperty Name="CliAcumTransAñoD" ColumnName="CliAcumTransAñoD" />
+                <ScalarProperty Name="CliAcumPesos" ColumnName="CliAcumPesos" />
+                <ScalarProperty Name="CliAcumDolar" ColumnName="CliAcumDolar" />
+                <ScalarProperty Name="CliPagaPesos" ColumnName="CliPagaPesos" />
+                <ScalarProperty Name="CliPagaDolar" ColumnName="CliPagaDolar" />
+                <ScalarProperty Name="CliTotTrans" ColumnName="CliTotTrans" />
+                <ScalarProperty Name="TabID" ColumnName="TabID" />
+                <ScalarProperty Name="TabIDImp" ColumnName="TabIDImp" />
+                <ScalarProperty Name="TabIDCtaAm" ColumnName="TabIDCtaAm" />
+                <ScalarProperty Name="TipPtoID" ColumnName="TipPtoID" />
+                <ScalarProperty Name="TipPtoID1" ColumnName="TipPtoID1" />
+                <ScalarProperty Name="CliRelAABCli" ColumnName="CliRelAABCli" />
+                <ScalarProperty Name="CliRelAABPro" ColumnName="CliRelAABPro" />
+                <ScalarProperty Name="CliRelAABPag" ColumnName="CliRelAABPag" />
+                <ScalarProperty Name="CliRelAABDes" ColumnName="CliRelAABDes" />
+                <ScalarProperty Name="CliFactA" ColumnName="CliFactA" />
+                <ScalarProperty Name="CliViaMensajes" ColumnName="CliViaMensajes" />
+                <ScalarProperty Name="CliFacDescuento" ColumnName="CliFacDescuento" />
+                <ScalarProperty Name="CliManejosEsp" ColumnName="CliManejosEsp" />
+                <ScalarProperty Name="CliFactHonorarios" ColumnName="CliFactHonorarios" />
+                <ScalarProperty Name="CliFactHonorariosImp" ColumnName="CliFactHonorariosImp" />
+                <ScalarProperty Name="RegOrigId" ColumnName="RegOrigId" />
+                <ScalarProperty Name="MetValID" ColumnName="MetValID" />
+                <ScalarProperty Name="CliPITEX" ColumnName="CliPITEX" />
+                <ScalarProperty Name="CliMaquiladora" ColumnName="CliMaquiladora" />
+                <ScalarProperty Name="CliPasswordInternet" ColumnName="CliPasswordInternet" />
+                <ScalarProperty Name="CliEnvaMatriz" ColumnName="CliEnvaMatriz" />
+                <ScalarProperty Name="CliRegla8a" ColumnName="CliRegla8a" />
+                <ScalarProperty Name="CliFraccionR8a" ColumnName="CliFraccionR8a" />
+                <ScalarProperty Name="CliColonia" ColumnName="CliColonia" />
+                <ScalarProperty Name="CliEsquina" ColumnName="CliEsquina" />
+                <ScalarProperty Name="CliSector" ColumnName="CliSector" />
+                <ScalarProperty Name="ImpAraID" ColumnName="ImpAraID" />
+                <ScalarProperty Name="IDProSec" ColumnName="IDProSec" />
+                <ScalarProperty Name="NumClienteTFM" ColumnName="NumClienteTFM" />
+                <ScalarProperty Name="ActaConstitutiva" ColumnName="ActaConstitutiva" />
+                <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="R1_SHCP" ColumnName="R1-SHCP" />
+                <ScalarProperty Name="AgrupCliCtaMex" ColumnName="AgrupCliCtaMex" />
+                <ScalarProperty Name="AgrupCliCtaAm" ColumnName="AgrupCliCtaAm" />
+                <ScalarProperty Name="AgrupCliFede" ColumnName="AgrupCliFede" />
+                <ScalarProperty Name="AltaPor" ColumnName="AltaPor" />
+                <ScalarProperty Name="FHAltaPor" ColumnName="FHAltaPor" />
+                <ScalarProperty Name="CliObs" ColumnName="CliObs" />
+                <ScalarProperty Name="Actualizo" ColumnName="Actualizo" />
+                <ScalarProperty Name="FHActualizo" ColumnName="FHActualizo" />
+                <ScalarProperty Name="NombreCorto" ColumnName="NombreCorto" />
+                <ScalarProperty Name="ActivarPS" ColumnName="ActivarPS" />
+                <ScalarProperty Name="ActivarR8va" ColumnName="ActivarR8va" />
+                <ScalarProperty Name="CliActivo" ColumnName="CliActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
