@@ -170,3 +170,12 @@ C:\Users\zayro\source\repos\ModuloClientes\ModuloClientes\ModuloClientes\obj\Deb
 C:\Users\zayro\source\repos\ModuloClientes\ModuloClientes\ModuloClientes\obj\Debug\ModuloClientes.csproj.CopyComplete
 C:\Users\zayro\source\repos\ModuloClientes\ModuloClientes\ModuloClientes\obj\Debug\ModuloClientes.dll
 C:\Users\zayro\source\repos\ModuloClientes\ModuloClientes\ModuloClientes\obj\Debug\ModuloClientes.pdb
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\EntityFramework.dll
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\EntityFramework.SqlServer.dll
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\EntityFramework.xml
+C:\Users\itsis\Documents\GitHub\ModuloClientes\ModuloClientes\ModuloClientes\bin\EntityFramework.SqlServer.xml
