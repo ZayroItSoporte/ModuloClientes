@@ -16,6 +16,12 @@ namespace ModuloClientes.Controllers
 
         public ActionResult ClienteAlta()
         {
+            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+            List<Paises> lpai = db.Paises.ToList();
+            ViewBag.lpai = lpai;
+
+            List<Estados> lest = db.Estados.ToList();
+            ViewBag.lest = lest;
             return View();
         }
 

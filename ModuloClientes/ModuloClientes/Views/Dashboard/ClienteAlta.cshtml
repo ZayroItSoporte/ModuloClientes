@@ -19,50 +19,56 @@
                     </div>
                     <div class="form-group">
                         <label for="txtDireccion">Direccion:</label>
-                        <input type="text" id="txtDireccion" class="form-control" />
+                        <input type="text" id="txtDireccion" placeholder="Calle Nombre" class="form-control" />
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label for="txtNumInt">Número Interior:</label>
-                            <input type="text" id="txtNumInt" class="form-control" />
+                            <input type="text" id="txtNumInt" placeholder="Local A" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtNumInt">Número Exterior:</label>
-                            <input type="text" id="txtNumExt" class="form-control" />
+                            <input type="text" id="txtNumExt" placeholder="4556" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label for="ddlCiudad">Ciudad:</label>
-                            <select id="ddlCiudad" class="form-control">
-                                <option value="Seleccionar">Seleccionar</option>
-                            </select>
+                            <input type="text" id="txtCiudad" placeholder="Ciudad Nombre" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="ddlEstado">Estado:</label>
                             <select id="ddlEstado" class="form-control">
                                 <option value="Seleccionar">Seleccionar</option>
+                                @foreach (Estados item in ViewBag.lest)
+                                {
+                                    <option value="@item.EstID">@item.EstNombre</option>
+                                }
                             </select>
                         </div>
                         <div class="col form-group">
                             <label for="ddlPais">País:</label>
                             <select id="ddlPais" class="form-control">
                                 <option value="Seleccionar">Seleccionar</option>
+                                @foreach (Paises item in ViewBag.lpai)
+                                {
+                                    <option value="@item.PaisID">@item.PaisNombre</option>
+                                }
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label for="txtCP">CP:</label>
-                            <input type="text" id="txtCP" class="form-control" />
+                            <input type="text" id="txtCP" placeholder="00000" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtRFC">RFC:</label>
-                            <input type="text" id="txtRFC" class="form-control" />
+                            <input type="text" id="txtRFC" placeholder="XAXX010101000" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtNSS">NSS:</label>
-                            <input type="text" id="txtNSS" class="form-control" />
+                            <label for="txtNSS">SSN:</label>
+                            <input type="text" id="txtSSN" placeholder="00000000000" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtIRS">IRS:</label>
@@ -77,18 +83,18 @@
                             </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtTelefonod">Telefono 2:</label>
+                            <label for="txtTelefono2">Telefono 2:</label>
                             <div class="input-group">
-                                <input type="text" id="txtTelefonod" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
+                                <input type="text" id="txtTelefono2" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                             </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtUR">URL:</label>
-                            <input type="text" id="txtUR" class="form-control" />
+                            <label for="txtURL">URL:</label>
+                            <input type="text" id="txtURL" placeholder="www.midomino.com" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtFAX">FAX:</label>
-                            <input type="text" id="txtFAX" class="form-control" />
+                            <input type="text" id="txtFAX" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                         </div>
                     </div>
                 </div>
@@ -114,48 +120,48 @@
                             <label id="lblCliDesde" class="form-control"></label>
                         </div>
                         <div class="col form-group">
-                            <label for="txtManejosEx">CliManejosEx:</label>
-                            <input type="number" id="txtManejosEx" step="0.01" value="0.0" class="number form-control" />
+                            <label for="txtCliManejosEx">CliManejosEx:</label>
+                            <input type="text" id="txtCliManejosEx" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtServCompEx">CliServCompEx:</label>
-                            <input type="number" id="txtServCompEx" step="0.01" value="0.0" class="number form-control" />
+                            <label for="txtCliServCompEx">CliServCompEx:</label>
+                            <input type="text" id="txtCliServCompEx" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtServCompIm">CliServCompIm:</label>
-                            <input type="number" id="txtServCompIm" step="0.01" value="0.0" class="number form-control" />
+                            <label for="txtCliServCompIm">CliServCompIm:</label>
+                            <input type="text" id="txtCliServCompIm" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label>CliHandlingIm:</label>
-                            <input type="text" id="txtCliHandlingIm" value="" class="form-control" />
+                            <input type="text" id="txtCliHandlingIm" placeholder="0" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliAcumTransAñoP:</label>
-                            <input type="number" id="txtCliAcumTransAñoP" step="1" value="0" min="0" class="number form-control" />
+                            <input type="text" id="txtCliAcumTransAñoP" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliAcumTransAñoD:</label>
-                            <input type="number" id="txtCliAcumTransAñoD" step="1" value="0" min="0" class="number form-control" />
+                            <input type="text" id="txtCliAcumTransAñoD" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label>CliAcumPesos</label>
-                            <input type="text" id="txtCliAcumPesos" value="" class="form-control" />
+                            <input type="text" id="txtCliAcumPesos" placeholder="0.00" class="money form-control text-right" />
                         </div>
                         <div class="col form-group">
                             <label>CliAcumDolar</label>
-                            <input type="text" id="txtCliAcumDolar" value="" class="form-control" />
+                            <input type="text" id="txtCliAcumDolar" placeholder="0.00" class="money form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliPagaPesos</label>
-                            <input type="text" id="txtCliPagaPesos" value="" class="form-control" />
+                            <input type="text" id="txtCliPagaPesos" placeholder="0.00" class="money form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliPagaDolar</label>
-                            <input type="text" id="txtCliPagaDolar" value="" class="form-control" />
+                            <input type="text" id="txtCliPagaDolar" placeholder="0.00" class="money form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -464,6 +470,11 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-block btn-dark btn-lg" type="submit" id="btnGuardaCli">Guardar</button>
+        </div>
+    </div>
 </div>
 
 @*<script src="~/plugins/inputmask/inputmask.min.js"></script>*@
@@ -479,6 +490,206 @@
             language: "es"
         });
         $('#txtTelefono').inputmask();
-        $('#txtTelefonod').inputmask();
+        $('#txtTelefono2').inputmask();
+        $('#txtFAX').inputmask();
+
+    });
+
+    $('#btnGuardaCli').click(function (e) {
+        e.preventDefault();
+
+        //#region Datos generales
+        var Nombre = $("input[id='txtNombre']").val().trim();
+        var Direccion = $("input[id='txtDireccion']").val().trim();
+        var NumInt = $("input[id='txtNumInt']").val().trim();
+        var NumExt = $("input[id='txtNumExt']").val().trim();
+        var Ciudad = $("#ddlCiudad option:selected").val();
+        var Estado = $("#ddlEstado option:selected").val();
+        var Pais = $("#ddlPais option:selected").val();
+        var CP = $("input[id='txtCP']").val().trim();
+        var RFC = $("input[id='txtRFC']").val().trim();
+        var SSN = $("input[id='txtSSN']").val().trim();
+        var IRS = $("input[id='txtIRS']").val().trim();
+        var Telefono = $("input[id='txtTelefono']").val().trim();
+        var Telefono2 = $("input[id='txtTelefono2']").val().trim();
+        var URL = $("input[id='txtURL']").val().trim();
+        var FAX = $("input[id='txtFAX']").val().trim();
+        //#endregion
+
+        //#region Otros datos
+        var CliDesde = $("input[id='lblCliDesde']").val().trim();
+        var CliManejoEx = $("input[id='txtCliManejoEx']").val().trim();
+        var CliServCompEx = $("input[id='txtCliServCompEx']").val().trim();
+        var CliServCompIm = $("input[id='txtCliServCompIm']").val().trim();
+        var CliHandlingIm = $("input[id='txtCliHandlingIm']").val().trim();
+        var CliAcumTransAñoP = $("input[id='txtCliAcumTransAñoP']").val().trim();
+        var CliAcumTransAñoD = $("input[id='txtCliAcumTransAñoD']").val().trim();
+        var CliAcumPesos = $("input[id='txtCliAcumPesos']").val().trim();
+        var CliAcumDolar = $("input[id='txtCliAcumDolar']").val().trim();
+        var CliPagaPesos = $("input[id='txtCliPagaPesos']").val().trim();
+        var CliPagaDolar = $("input[id='txtCliPagaDolar']").val().trim();
+        var CliTotTrans = $("input[id='txtCliTotTrans']").val().trim();
+        //#endregion
+
+        //#region Mas datos
+        var TabID = $("input[id='txtTabID']").val().trim();
+        var TabIDImp = $("input[id='txtTabIDImp']").val().trim();
+        var TabIDCtaAm = $("input[id='txtTabIDCtaAm']").val().trim();
+        var TipPtoID = $("input[id='txtTipPtoID']").val().trim();
+        var TipPtoID1 = $("input[id='txtTipPtoID1']").val().trim();
+        var CliRelAABCli = $("#chbCliRelAABCli").attr("checked") ? 1 : 0;
+        var CliRelAAPro = $("#chbCliRelAABPro").attr("checked") ? 1 : 0;
+        var CliRelAABPag = $("#chbCliRelAABPag").attr("checked") ? 1 : 0;
+        var CliRelAABDes = $("#chbCliRelAABDes").attr("checked") ? 1 : 0;
+        var CliManejosEsp = $("#chbCliManejosEsp").attr("checked") ? 1 : 0;
+        var CliFactA = $("input[id='txtCliFactA']").val().trim();
+        var CliViaMensajes = $("input[id='txtCliViaMensajes']").val().trim();
+        var CliFacDescuento = $("input[id='txtCliFacDescuento']").val().trim();
+
+        var CliFactHonorarios = $("input[id='txtCliFactHonorarios']").val().trim();
+        var CliFactHonorariosImp = $("input[id='txtCliFactHonorariosImp']").val().trim();
+        var RegOrigId = $("input[id='txtRegOrigId']").val().trim();
+        var MetValID = $("input[id='txtMetValID']").val().trim();
+        var CliPITEX = $("#chbCliPITEX").attr("checked") ? 1 : 0;
+        var CliMaquiladora = $("#chbCliMaquiladora").attr("checked") ? 1 : 0;
+        var CliEnvaMatriz = $("#chbCliEnvaMatriz").attr("checked") ? 1 : 0;
+        var CliRegla8a = $("#chbCliRegla8a").attr("checked") ? 1 : 0;
+        var CliPasswordInternet = $("input[id='txtCliPasswordInternet']").val().trim();
+        var CliFraccionR8a = $("input[id='txtCliFraccionR8a']").val().trim();
+        //#endregion
+
+        //#region y mas datos
+        var CliColonia = $("input[id='txtCliColonia']").val().trim();
+        var CliEsquina = $("input[id='txtCliEsquina']").val().trim();
+        var CliSector = $("input[id='txtCliSector']").val().trim();
+        var ImpAraID = $("input[id='txtImpAraID']").val().trim();
+        var IDProSec = $("input[id='txtIDProSec']").val().trim();
+        var NumClienteTFM = $("input[id='txtNumClienteTFM']").val().trim();
+        var ActaConstitutiva = $("#chbActaConstitutiva").attr("checked") ? 1 : 0;
+        var CIF = $("input[id='chbCIF']").val().trim();
+        var R1SHCP = $("input[id='chbR1-SHCP']").val().trim();
+        var CURP = $("input[id='txtCURP']").val().trim();
+        var AgrupCliCtaMex = $("input[id='txtAgrupCliCtaMex']").val().trim();
+        var AgrupCliCtaAm = $("input[id='txtAgrupCliCtaAm']").val().trim();
+        var AgrupCliFede = $("input[id='txtAgrupCliFede']").val().trim();
+        var AltaPor = $("input[id='txtAltaPor']").val().trim();
+        var FHAltaPor = $("input[id='txtFHAltaPor']").val().trim();
+        var CliObs = $("input[id='txtCliObs']").val().trim();
+        var Actualizo = $("input[id='txtActualizo']").val().trim();
+        var FHActualizo = $("input[id='txtFHActualizo']").val().trim();
+        var NombreCorto = $("input[id='txtNombreCorto']").val().trim();
+        var ActivarPS = $("#chbActivarPS").attr("checked") ? 1 : 0;
+        var ActivarR8va = $("#chbActivarR8va").attr("checked") ? 1 : 0;
+        var CliActivo = $("#chbCliActivo").attr("checked") ? 1 : 0;
+        //#endregion
+
+        const data = new FormData();
+        //#region Datos generales
+        data.append("NOMBRE", Nombre);
+        data.append("DIRECCION", Direccion);
+        data.append("ClieNumInt", NumInt);
+        data.append("ClieNumExt", NumExt);
+        data.append("CIUDAD", Ciudad);
+        data.append("EstID", Estado);
+        data.append("PaisID", Pais);
+        data.append("CliCodPost", CP);
+        data.append("CliRFC", RFC);
+        data.append("CliSSN", SSN);
+        data.append("CliIRS", IRS);
+        data.append("TELEFONO", Telefono);
+        data.append("Telefono2", Telefono2);
+        data.append("URL", URL);
+        data.append("FAX", FAX);
+        //#endregion
+        //#region Otros datos
+        data.append("CliDesde", CliDesde);
+        data.append("CliManejosEx", CliManejoEx);
+        data.append("CliServCompEx", CliServCompEx);
+        data.append("CliServCompIm", CliServCompIm);
+        data.append("CliHandlingIm", CliHandlingIm);
+        data.append("CliAcumTransAñoP", CliAcumTransAñoP);
+        data.append("CliAcumTransAñoD", CliAcumTransAñoD);
+        data.append("CliAcumPesos", CliAcumPesos);
+        data.append("CliAcumDolar", CliAcumDolar);
+        data.append("CliPagaPesos", CliPagaPesos);
+        data.append("CliPagaDolar", CliPagaDolar);
+        data.append("CliTotTrans", CliTotTrans);
+        //#endregion
+        //#region datos
+        data.append("TabID", TabID);
+        data.append("TabIDImp", TabIDImp);
+        data.append("TabIDCtaAm", TabIDCtaAm);
+        data.append("TipPtoID", TipPtoID);
+        data.append("TipPtoID1", TipPtoID1);
+        data.append("CliRelAABCli", CliRelAABCli);
+        data.append("CliRelAABPro", CliRelAAPro);
+        data.append("CliRelAABPag", CliRelAABPag);
+        data.append("CliRelAABDes", CliRelAABDes);
+        data.append("CliFactA", CliFactA);
+        data.append("CliViaMensajes", CliViaMensajes);
+        data.append("CliFacDescuento", CliFacDescuento);
+        data.append("CliManejosEsp", CliManejosEsp);
+        data.append("CliFactHonorarios", CliFactHonorarios);
+        data.append("CliFactHonorariosImp", CliFactHonorariosImp);
+        data.append("RegOrigId", RegOrigId);
+        data.append("MetValID", MetValID);
+        data.append("CliPITEX", CliPITEX);
+        data.append("CliMaquiladora", CliMaquiladora);
+        data.append("CliPasswordInternet", CliPasswordInternet);
+        data.append("CliEnvaMatriz", CliEnvaMatriz);
+        data.append("CliRegla8a", CliRegla8a);
+        data.append("CliFraccionR8a", CliFraccionR8a);
+        //#endregion
+        //#region y más datos
+        data.append("CliColonia", CliColonia);
+        data.append("CliEsquina", CliEsquina);
+        data.append("CliSector", CliSector);
+        data.append("ImpAraID", ImpAraID);
+        data.append("IDProSec", IDProSec);
+        data.append("NumClienteTFM", NumClienteTFM);
+        data.append("ActaConstitutiva", ActaConstitutiva);
+        data.append("CIF", CIF);
+        data.append("CURP", CURP);
+        data.append("R1-SHCP", R1SHCP);
+        data.append("AgrupCliCtaMex", AgrupCliCtaMex);
+        data.append("AgrupCliCtaAm", AgrupCliCtaAm);
+        data.append("AgrupCliFede", AgrupCliFede);
+        data.append("AltaPor", AltaPor);
+        data.append("FHAltaPor", FHAltaPor);
+        data.append("CliObs", CliObs);
+        data.append("Actualizo", Actualizo);
+        data.append("FHActualizo", FHActualizo);
+        data.append("NombreCorto", NombreCorto);
+        data.append("ActivarPS", ActivarPS);
+        data.append("ActivarR8va", ActivarR8va);
+        data.append("CliActivo", CliActivo);
+        //#endregion
+
+        $.ajax({
+            url: "@Url.Action("ClienteInserta", "Dashboard")", // Url
+            type: "Post",  // Verbo HTTP
+            data: data,
+            // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+            processData: false, contentType: false,
+            success: function (response) {
+                if (response.error) {
+                    wal.fire({
+                        icon: 'error',
+                        title: 'Hubo un problema',
+                        text: response.message,
+                        footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                    });
+                }
+                else {
+                    Swal.fire({
+                        title: '¡Cliente en listo!',
+                        confirmButtonText: 'Excelente',
+                    }).then((result) => {
+                        //Esto redirecciona a una vista diferente
+                        @*window.location.href = '@Url.Action("ClienteAlta", "Dashboard")';*@
+                    });
+                }
+            }
+        });
     });
 </script>

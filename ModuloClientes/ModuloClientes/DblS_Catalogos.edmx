@@ -83,8 +83,35 @@
           <Property Name="ActivarR8va" Type="bit" />
           <Property Name="CliActivo" Type="bit" />
         </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="EstID" />
+          </Key>
+          <Property Name="EstID" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="EstNombre" Type="nvarchar" MaxLength="30" />
+          <Property Name="EstPais" Type="nvarchar" MaxLength="3" />
+          <Property Name="EstSiglaSaaim3" Type="nvarchar" MaxLength="2" />
+          <Property Name="PaisID" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="PaisID" />
+          </Key>
+          <Property Name="PaisID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="PaisIDSAIIM3" Type="nvarchar" MaxLength="3" />
+          <Property Name="PaisNombre" Type="nvarchar" MaxLength="60" />
+          <Property Name="PaisNombreSAIIM3" Type="nvarchar" MaxLength="65" />
+          <Property Name="PaisTratadoconMex" Type="bit" />
+          <Property Name="PaisNombreTratado" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaisAbrev" Type="nvarchar" MaxLength="65" />
+          <Property Name="PaisAviso" Type="bit" />
+          <Property Name="PaisparaEtiq" Type="bit" />
+          <Property Name="Pais6" Type="nvarchar" MaxLength="6" />
+        </EntityType>
         <EntityContainer Name="DbIS_CatalogosModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -170,7 +197,34 @@
         </EntityType>
         <EntityContainer Name="DbIS_CatalogosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="Estados" EntityType="DbIS_CatalogosModel.Estados" />
+          <EntitySet Name="Paises" EntityType="DbIS_CatalogosModel.Paises" />
         </EntityContainer>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="EstID" />
+          </Key>
+          <Property Name="EstID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EstNombre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EstPais" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="EstSiglaSaaim3" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="PaisID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="PaisID" />
+          </Key>
+          <Property Name="PaisID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PaisIDSAIIM3" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PaisNombre" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="PaisNombreSAIIM3" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Name="PaisTratadoconMex" Type="Boolean" />
+          <Property Name="PaisNombreTratado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaisAbrev" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+          <Property Name="PaisAviso" Type="Boolean" />
+          <Property Name="PaisparaEtiq" Type="Boolean" />
+          <Property Name="Pais6" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -253,6 +307,33 @@
                 <ScalarProperty Name="ActivarPS" ColumnName="ActivarPS" />
                 <ScalarProperty Name="ActivarR8va" ColumnName="ActivarR8va" />
                 <ScalarProperty Name="CliActivo" ColumnName="CliActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="DbIS_CatalogosModel.Estados">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="PaisID" ColumnName="PaisID" />
+                <ScalarProperty Name="EstSiglaSaaim3" ColumnName="EstSiglaSaaim3" />
+                <ScalarProperty Name="EstPais" ColumnName="EstPais" />
+                <ScalarProperty Name="EstNombre" ColumnName="EstNombre" />
+                <ScalarProperty Name="EstID" ColumnName="EstID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paises">
+            <EntityTypeMapping TypeName="DbIS_CatalogosModel.Paises">
+              <MappingFragment StoreEntitySet="Paises">
+                <ScalarProperty Name="Pais6" ColumnName="Pais6" />
+                <ScalarProperty Name="PaisparaEtiq" ColumnName="PaisparaEtiq" />
+                <ScalarProperty Name="PaisAviso" ColumnName="PaisAviso" />
+                <ScalarProperty Name="PaisAbrev" ColumnName="PaisAbrev" />
+                <ScalarProperty Name="PaisNombreTratado" ColumnName="PaisNombreTratado" />
+                <ScalarProperty Name="PaisTratadoconMex" ColumnName="PaisTratadoconMex" />
+                <ScalarProperty Name="PaisNombreSAIIM3" ColumnName="PaisNombreSAIIM3" />
+                <ScalarProperty Name="PaisNombre" ColumnName="PaisNombre" />
+                <ScalarProperty Name="PaisIDSAIIM3" ColumnName="PaisIDSAIIM3" />
+                <ScalarProperty Name="PaisID" ColumnName="PaisID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

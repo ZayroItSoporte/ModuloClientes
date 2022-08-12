@@ -26,5 +26,7 @@ namespace ModuloClientes
         }
     
         public virtual DbSet<Clientes> Clientes { get; set; }
+        public virtual DbSet<Estados> Estados { get; set; }
+        public virtual DbSet<Paises> Paises { get; set; }
     }
 }
