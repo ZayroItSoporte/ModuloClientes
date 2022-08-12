@@ -14,7 +14,7 @@ namespace ModuloClientes.Controllers
             return View();
         }
 
-        public ActionResult ClienteAlta()
+        public ActionResult ClienteAlta(string id)
         {
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
             List<Paises> lpai = db.Paises.ToList();
@@ -22,6 +22,10 @@ namespace ModuloClientes.Controllers
 
             List<Estados> lest = db.Estados.ToList();
             ViewBag.lest = lest;
+
+            Clientes cliente = db.Clientes.Where(x => x.CLIENTE == id).SingleOrDefault();
+            ViewBag.cliente = cliente;
+
             return View();
         }
 
@@ -32,6 +36,7 @@ namespace ModuloClientes.Controllers
             Clientes nc = c;
             nc.CLIENTE = "0001";
             db.Clientes.Add(nc);
+
             db.SaveChanges();
 
             return null;
@@ -46,6 +51,22 @@ namespace ModuloClientes.Controllers
             ViewBag.listadoClientes = listadoClientes;
 
             return View();
+        }
+        public JsonResult CargarClientes()
+        {
+            try
+            {
+                DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+                List<Clientes> listadoClientes = db.Clientes.ToList();
+                var jsonOrdenes = Json(listadoClientes, JsonRequestBehavior.AllowGet);
+                jsonOrdenes.MaxJsonLength = Int32.MaxValue;
+                return jsonOrdenes;
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = true, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }
