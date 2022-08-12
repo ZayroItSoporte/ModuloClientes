@@ -1,4 +1,11 @@
-﻿<section class="content-header">
+﻿<style>
+    #table thead {
+        background-color: #343a40;
+        color: white;
+    }
+</style>
+
+<section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -24,7 +31,23 @@
                         <h3 class="card-title">Listado de Clientes</h3>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive-lg p-b-25">
+
+                        <div class="loader text-center">
+                            <div class="spinner-grow text-dark" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="spinner-grow text-dark" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="spinner-grow text-dark" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="spinner-grow text-dark" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+
+                        <div style="display:none;" class="table-responsive-lg p-b-25">
                             <table id="table"
                                    data-toolbar="#toolbar"
                                    data-detail-view="true"
@@ -59,19 +82,36 @@
 
 <script>
 
-    var data = @Html.Raw(Json.Encode(ViewBag.listadoClientes));
+    $(document).ready(function () {
 
-    $('#table').bootstrapTable({
-        locale: "es-MX",
-        cache: false,
-        data: data,
-        paginationPreText: '<i class="fa fa-arrow-left"></i> Anterior',
-        paginationNextText: '<i class="fa fa-arrow-right"></i> Siguiente',
-        pagination: true,
-        pageSize: 50,
-        pageList: [25, 50, 100],
-        //sortName: 'FechaCreacion',
-        sortOrder: 'desc',
+        $('.loader').show();
+        $('.table-responsive-lg').hide();
+
+        $.ajax({
+            url: "@Url.Action("CargarClientes", "Dashboard")",
+            type: "GET",
+            async: false,
+            success: function (response) {
+
+                $('#table').bootstrapTable({
+                    locale: "es-MX",
+                    data: response,
+                    cache: false,
+                    paginationPreText: '<i class="fa fa-arrow-left"></i> Anterior',
+                    paginationNextText: '<i class="fa fa-arrow-right"></i> Siguiente',
+                    pagination: true,
+                    pageSize: 50,
+                    pageList: [25, 50, 100],
+                    sortOrder: 'CLIENTE',
+                });
+
+                $('.loader').hide();
+                $('.table-responsive-lg').show();
+            }
+        });
+
+
+
     });
 
     //#region FORMATTER'S
