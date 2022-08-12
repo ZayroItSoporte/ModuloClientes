@@ -25,6 +25,18 @@ namespace ModuloClientes.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult ClienteInserta(Clientes c)
+        {
+            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+            Clientes nc = c;
+            nc.CLIENTE = "0001";
+            db.Clientes.Add(nc);
+            db.SaveChanges();
+
+            return null;
+        }
+
         public ActionResult ClienteListado()
         {
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();

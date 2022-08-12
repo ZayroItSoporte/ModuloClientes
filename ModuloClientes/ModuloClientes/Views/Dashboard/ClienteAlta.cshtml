@@ -117,7 +117,7 @@
                     <div class="row">
                         <div class="col form-group">
                             <label for="lblCliDesde">Cliente desde:</label>
-                            <label id="lblCliDesde" class="form-control"></label>
+                            <input type="text" id="txtCliDesde" class="datep form-control"/>
                         </div>
                         <div class="col form-group">
                             <label for="txtCliManejosEx">CliManejosEx:</label>
@@ -503,7 +503,7 @@
         var Direccion = $("input[id='txtDireccion']").val().trim();
         var NumInt = $("input[id='txtNumInt']").val().trim();
         var NumExt = $("input[id='txtNumExt']").val().trim();
-        var Ciudad = $("#ddlCiudad option:selected").val();
+        var Ciudad = $("input[id='txtCiudad']").val().trim();
         var Estado = $("#ddlEstado option:selected").val();
         var Pais = $("#ddlPais option:selected").val();
         var CP = $("input[id='txtCP']").val().trim();
@@ -517,8 +517,8 @@
         //#endregion
 
         //#region Otros datos
-        var CliDesde = $("input[id='lblCliDesde']").val().trim();
-        var CliManejoEx = $("input[id='txtCliManejoEx']").val().trim();
+        var CliDesde = $("input[id='txtCliDesde']").val().trim();
+        var CliManejosEx = $("input[id='txtCliManejosEx']").val().trim();
         var CliServCompEx = $("input[id='txtCliServCompEx']").val().trim();
         var CliServCompIm = $("input[id='txtCliServCompIm']").val().trim();
         var CliHandlingIm = $("input[id='txtCliHandlingIm']").val().trim();
@@ -603,7 +603,7 @@
         //#endregion
         //#region Otros datos
         data.append("CliDesde", CliDesde);
-        data.append("CliManejosEx", CliManejoEx);
+        data.append("CliManejosEx", CliManejosEx);
         data.append("CliServCompEx", CliServCompEx);
         data.append("CliServCompIm", CliServCompIm);
         data.append("CliHandlingIm", CliHandlingIm);
