@@ -35,8 +35,14 @@
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="ddlCiudad">Ciudad:</label>
-                            <input type="text" id="txtCiudad" placeholder="Ciudad Nombre" class="form-control" />
+                            <label for="ddlPais">País:</label>
+                            <select id="ddlPais" class="form-control">
+                                <option value="Seleccionar">Seleccionar</option>
+                                @foreach (Paises item in ViewBag.lpai)
+                                {
+                                    <option value="@item.PaisID">@item.PaisNombre</option>
+                                }
+                            </select>
                         </div>
                         <div class="col form-group">
                             <label for="ddlEstado">Estado:</label>
@@ -49,14 +55,8 @@
                             </select>
                         </div>
                         <div class="col form-group">
-                            <label for="ddlPais">País:</label>
-                            <select id="ddlPais" class="form-control">
-                                <option value="Seleccionar">Seleccionar</option>
-                                @foreach (Paises item in ViewBag.lpai)
-                                {
-                                    <option value="@item.PaisID">@item.PaisNombre</option>
-                                }
-                            </select>
+                            <label for="ddlCiudad">Ciudad:</label>
+                            <input type="text" id="txtCiudad" placeholder="Ciudad Nombre" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -498,6 +498,24 @@
 
     });
 
+    $('#ddlPais').on('change', function() {
+        var Pais = $("#ddlPais option:selected").val();
+        //const data = new FormData();
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("LlenaEstados", "Dashboard")',
+            data: {
+                data: $("#ProcessName").val()
+            },
+            dataType: 'json',
+            success: function(response) {
+                // use console.log for debugging, and access the property of the deserialised object
+                console.log(response.Name);
+            }
+        });
+    });
+
     $('#btnGuardaCli').click(function (e) {
         e.preventDefault();
 
@@ -694,7 +712,7 @@
                     }
                     else {
                         Swal.fire({
-                            title: '¡Cliente en listo!',
+                            title: '¡Cliente listo!',
                             confirmButtonText: 'Excelente',
                         }).then((result) => {
                             //Esto redirecciona a una vista diferente
@@ -744,7 +762,7 @@
 @if (ViewBag.cliente != null)
 {
 
-<script>
+    <script>
 
     var cliente = @Html.Raw(Json.Encode(ViewBag.cliente));
 
@@ -771,6 +789,6 @@
 
     //#endregion
 
-</script>
+    </script>
 
 }

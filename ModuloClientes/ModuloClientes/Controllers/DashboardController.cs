@@ -37,7 +37,7 @@ namespace ModuloClientes.Controllers
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 Clientes nc = c;
-                nc.CLIENTE = "0001";
+                //nc.CLIENTE = "0001";
                 db.Clientes.Add(nc);
 
                 db.SaveChanges();
@@ -50,7 +50,18 @@ namespace ModuloClientes.Controllers
             }
 
         }
-        
+
+        [HttpPost]
+        public  ActionResult LlenaEstados(string Pais)
+        {
+            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+            List<Estados> lest = db.Estados.ToList();
+            //List<Estados> lest = db.Estados.Where(f => f.PaisID == Pais).ToList();
+            ViewBag.lest = lest;
+
+            return View();
+        }
+
         [HttpPost]
         public JsonResult ClienteModifica(Clientes c)
         {
