@@ -176,7 +176,7 @@
 
     function accionesFormatter(value, row, index) {
         var html = '<div id="btnAcciones" class="text-center">' +
-            '<button style="width: 40%; margin-right: 5px;" onclick="" type="button" title="Modificar Cliente" class="btn btn-success"> <i class="fa fa-edit"></i></button >' +
+            '<button style="width: 40%; margin-right: 5px;" onclick="cargarClienteAlta(\''+ row.CLIENTE +'\');" type="button" title="Modificar Cliente" class="btn btn-success"> <i class="fa fa-edit"></i></button >' +
             '<button style="width: 40%; margin-right: 5px;" onclick="" type="button" title="Dar de baja" class="btn btn-danger "><i class="fa fa-trash"></i></button>' +
             '</div >';
 

@@ -32,14 +32,43 @@ namespace ModuloClientes.Controllers
         [HttpPost]
         public JsonResult ClienteInserta(Clientes c)
         {
-            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
-            Clientes nc = c;
-            nc.CLIENTE = "0001";
-            db.Clientes.Add(nc);
+            try
+            {
+                DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+                Clientes nc = c;
+                nc.CLIENTE = "0001";
+                db.Clientes.Add(nc);
 
-            db.SaveChanges();
+                db.SaveChanges();
 
-            return null;
+                return Json(new { error = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = true, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        
+        [HttpPost]
+        public JsonResult ClienteModifica(Clientes c)
+        {
+            try
+            {
+                DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+                Clientes nc = db.Clientes.Where(x => x.CLIENTE == c.CLIENTE).SingleOrDefault();
+
+                nc = c;
+
+                db.SaveChanges();
+
+                return Json(new { error = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = true, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+
         }
 
         public ActionResult ClienteListado()
@@ -58,8 +87,10 @@ namespace ModuloClientes.Controllers
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 List<Clientes> listadoClientes = db.Clientes.ToList();
+
                 var jsonOrdenes = Json(listadoClientes, JsonRequestBehavior.AllowGet);
                 jsonOrdenes.MaxJsonLength = Int32.MaxValue;
+
                 return jsonOrdenes;
 
             }

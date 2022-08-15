@@ -1,4 +1,6 @@
 ﻿
+<input hidden id="idCliente" value="0" />
+
 <div class="container-fluid">
     @* Datos generales *@
     <div class="row">
@@ -117,7 +119,7 @@
                     <div class="row">
                         <div class="col form-group">
                             <label for="lblCliDesde">Cliente desde:</label>
-                            <input type="text" id="txtCliDesde" class="datep form-control"/>
+                            <input type="text" id="txtCliDesde" class="datep form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtCliManejosEx">CliManejosEx:</label>
@@ -481,6 +483,7 @@
 <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
 <script src="~/plugins/moment/moment.min.js"></script>
 
+<!--INSERTAR CLIENTE-->
 <script>
     $(document).ready(function () {
         $('.datep').datepicker({
@@ -584,6 +587,7 @@
         //#endregion
 
         const data = new FormData();
+
         //#region Datos generales
         data.append("NOMBRE", Nombre);
         data.append("DIRECCION", Direccion);
@@ -601,6 +605,7 @@
         data.append("URL", URL);
         data.append("FAX", FAX);
         //#endregion
+
         //#region Otros datos
         data.append("CliDesde", CliDesde);
         data.append("CliManejosEx", CliManejosEx);
@@ -615,6 +620,7 @@
         data.append("CliPagaDolar", CliPagaDolar);
         data.append("CliTotTrans", CliTotTrans);
         //#endregion
+
         //#region datos
         data.append("TabID", TabID);
         data.append("TabIDImp", TabIDImp);
@@ -640,6 +646,7 @@
         data.append("CliRegla8a", CliRegla8a);
         data.append("CliFraccionR8a", CliFraccionR8a);
         //#endregion
+
         //#region y más datos
         data.append("CliColonia", CliColonia);
         data.append("CliEsquina", CliEsquina);
@@ -665,31 +672,102 @@
         data.append("CliActivo", CliActivo);
         //#endregion
 
-        $.ajax({
-            url: "@Url.Action("ClienteInserta", "Dashboard")", // Url
-            type: "Post",  // Verbo HTTP
-            data: data,
-            // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
-            processData: false, contentType: false,
-            success: function (response) {
-                if (response.error) {
-                    wal.fire({
-                        icon: 'error',
-                        title: 'Hubo un problema',
-                        text: response.message,
-                        footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
-                    });
-                }
-                else {
-                    Swal.fire({
-                        title: '¡Cliente en listo!',
-                        confirmButtonText: 'Excelente',
-                    }).then((result) => {
-                        //Esto redirecciona a una vista diferente
+        //Cliente ID
+        var clienteID = $('#idCliente').val()
+
+        if (clienteID == 0) {
+
+            $.ajax({
+                url: "@Url.Action("ClienteInserta", "Dashboard")", // Url
+                type: "Post",  // Verbo HTTP
+                data: data,
+                // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+                processData: false, contentType: false,
+                success: function (response) {
+                    if (response.error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Hubo un problema',
+                            text: response.message,
+                            footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: '¡Cliente en listo!',
+                            confirmButtonText: 'Excelente',
+                        }).then((result) => {
+                            //Esto redirecciona a una vista diferente
                         @*window.location.href = '@Url.Action("ClienteAlta", "Dashboard")';*@
-                    });
+                        });
+                    }
                 }
-            }
-        });
+            });
+
+        }
+        else {
+            $.ajax({
+                url: "@Url.Action("ClienteModifica", "Dashboard")", // Url
+                type: "Post",  // Verbo HTTP
+                data: data,
+                // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+                processData: false, contentType: false,
+                success: function (response) {
+                    if (response.error) {
+                        wal.fire({
+                            icon: 'error',
+                            title: 'Hubo un problema',
+                            text: response.message,
+                            footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: '¡Cliente en listo!',
+                            confirmButtonText: 'Excelente',
+                        }).then((result) => {
+                            //Esto redirecciona a una vista diferente
+                        @*window.location.href = '@Url.Action("ClienteAlta", "Dashboard")';*@
+                        });
+                    }
+                }
+            });
+        }
+
     });
 </script>
+
+<!--CARGAR CLIENTE-->
+@if (ViewBag.cliente != null)
+{
+
+<script>
+
+    var cliente = @Html.Raw(Json.Encode(ViewBag.cliente));
+
+    //#region Datos generales
+
+    $('#idCliente').val(cliente.CLIENTE);
+    $("input[id='txtNombre']").val(cliente.NOMBRE);
+    $("input[id='txtDireccion']").val(cliente.DIRECCION);
+    $("input[id='txtNumInt']").val(cliente.ClieNumInt);
+    $("input[id='txtNumExt']").val(cliente.ClieNumExt);
+    $("input[id='txtCiudad']").val(cliente.CIUDAD);
+
+    $("#ddlPais").val(cliente.PaisID).change();
+    $("#ddlEstado").val(cliente.EstID).change();
+
+    $("input[id='txtCP']").val(cliente.CliCodPost);
+    $("input[id='txtRFC']").val(cliente.CliRFC);
+    $("input[id='txtSSN']").val(cliente.CliSSN);
+    $("input[id='txtIRS']").val(cliente.CliIRS);
+    $("input[id='txtTelefono']").val(cliente.TELEFONO);
+    $("input[id='txtTelefono2']").val(cliente.Telefono2);
+    $("input[id='txtURL']").val(cliente.URL);
+    $("input[id='txtFAX']").val(cliente.FAX);
+
+    //#endregion
+
+</script>
+
+}
