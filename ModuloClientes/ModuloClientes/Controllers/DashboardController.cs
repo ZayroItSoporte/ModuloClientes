@@ -52,11 +52,11 @@ namespace ModuloClientes.Controllers
         }
 
         [HttpPost]
-        public  ActionResult LlenaEstados(string Pais)
+        public  ActionResult LlenaEstados(string Paisid)
         {
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
             List<Estados> lest = db.Estados.ToList();
-            //List<Estados> lest = db.Estados.Where(f => f.PaisID == Pais).ToList();
+            //List<Estados> lest = db.Estados.Where(f => f.PaisID == Paisid).ToList();
             ViewBag.lest = lest;
 
             return View();

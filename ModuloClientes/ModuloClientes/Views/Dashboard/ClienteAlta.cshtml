@@ -499,21 +499,20 @@
     });
 
     $('#ddlPais').on('change', function() {
-        var Pais = $("#ddlPais option:selected").val();
+        var Paisid = $("#ddlPais option:selected").val();
         //const data = new FormData();
 
         $.ajax({
-            type: "POST",
-            url: '@Url.Action("LlenaEstados", "Dashboard")',
-            data: {
-                data: $("#ProcessName").val()
-            },
-            dataType: 'json',
-            success: function(response) {
-                // use console.log for debugging, and access the property of the deserialised object
-                console.log(response.Name);
-            }
-        });
+                type: "POST",
+                url: '@Url.Action("LlenaEstados", "Dashboard")',
+                data: { Paisid: Paisid },
+            success: function (data) {
+                alert('id del pais' + Paisid);
+                },
+                error: function () {
+                    alert(message);
+                }
+            });
     });
 
     $('#btnGuardaCli').click(function (e) {
