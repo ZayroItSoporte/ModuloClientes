@@ -706,6 +706,9 @@
 
         }
         else {
+
+            data.append("CLIENTE", clienteID);
+
             $.ajax({
                 url: "@Url.Action("ClienteModifica", "Dashboard")", // Url
                 type: "Post",  // Verbo HTTP
@@ -714,7 +717,7 @@
                 processData: false, contentType: false,
                 success: function (response) {
                     if (response.error) {
-                        wal.fire({
+                        Swal.fire({
                             icon: 'error',
                             title: 'Hubo un problema',
                             text: response.message,

@@ -25,6 +25,7 @@ namespace ModuloClientes.Controllers
 
             Clientes cliente = db.Clientes.Where(x => x.CLIENTE == id).SingleOrDefault();
             ViewBag.cliente = cliente;
+            ViewBag.id = id;
 
             return View();
         }
@@ -58,7 +59,8 @@ namespace ModuloClientes.Controllers
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 Clientes nc = db.Clientes.Where(x => x.CLIENTE == c.CLIENTE).SingleOrDefault();
 
-                nc = c;
+                db.Entry(nc).CurrentValues.SetValues(c);
+                //nc = c;
 
                 db.SaveChanges();
 
