@@ -37,9 +37,9 @@ namespace ModuloClientes.Controllers
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 Clientes nc = c;
-                //nc.CLIENTE = "0001";
+                nc.CLIENTE = "0003";
                 //db.Clientes.Add(nc);
-                db.Ins_ClientesCatalogo(c.CLIENTE, c.NOMBRE, c.DIRECCION, c.ClieNumInt);
+                db.Ins_ClientesCatalogo(c.CLIENTE, c.NOMBRE, c.DIRECCION, c.ClieNumInt, c.ClieNumExt, c.CIUDAD, c.EstID, c.PaisID, c.CliCodPost, c.CliRFC, c.CliIRS, c.TELEFONO, c.Telefono2, c.CliColonia, c.CURP, c.AltaPor, c.URL, c.AgrupCliCtaMex, c.AgrupCliCtaAm, "identificador", c.FAX, "usuario");
 
                 db.SaveChanges();
 

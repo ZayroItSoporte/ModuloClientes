@@ -77,6 +77,10 @@
                             <label for="txtIRS">IRS:</label>
                             <input type="text" id="txtIRS" class="form-control" />
                         </div>
+                        <div class="col form-group">
+                            <label for="txtCURP">CURP</label>
+                            <input type="text" id="txtCURP" value="" class="form-control" />
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
@@ -152,25 +156,25 @@
                     <div class="row">
                         <div class="col form-group">
                             <label>CliAcumPesos</label>
-                            <input type="text" id="txtCliAcumPesos" placeholder="0.00" class="money form-control text-right" />
+                            <input type="text" id="txtCliAcumPesos" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                         <div class="col form-group">
                             <label>CliAcumDolar</label>
-                            <input type="text" id="txtCliAcumDolar" placeholder="0.00" class="money form-control" />
+                            <input type="text" id="txtCliAcumDolar" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                         <div class="col form-group">
                             <label>CliPagaPesos</label>
-                            <input type="text" id="txtCliPagaPesos" placeholder="0.00" class="money form-control" />
+                            <input type="text" id="txtCliPagaPesos" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                         <div class="col form-group">
                             <label>CliPagaDolar</label>
-                            <input type="text" id="txtCliPagaDolar" placeholder="0.00" class="money form-control" />
+                            <input type="text" id="txtCliPagaDolar" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label>CliTotTrans</label>
-                            <input type="number" id="txtCliTotTrans" value="" class="number form-control" />
+                            <input type="number" id="txtCliTotTrans" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                 </div>
@@ -194,25 +198,25 @@
                     <div class="row">
                         <div class="col form-group">
                             <label>TabID</label>
-                            <input type="number" id="txtTabID" value="" class="number form-control" />
+                            <input type="number" id="txtTabID" placeholder="0.00" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label>TabIDImp</label>
-                            <input type="number" id="txtTabIDImp" value="" class="number form-control" />
+                            <input type="number" id="txtTabIDImp" placeholder="0.00" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label>TabIDCtaAm</label>
-                            <input type="number" id="txtTabIDCtaAm" value="" class="number form-control" />
+                            <input type="number" id="txtTabIDCtaAm" placeholder="0.00" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label>TipPtoID</label>
-                            <input type="text" id="txtTipPtoID" value="" class="form-control" />
+                            <input type="text" id="txtTipPtoID" placeholder="" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label>TipPtoID1</label>
-                            <input type="text" id="txtTipPtoID1" value="" class="form-control" />
+                            <input type="text" id="txtTipPtoID1" placeholder="" class="form-control" />
                         </div>
                     </div>
                     <br />
@@ -252,15 +256,15 @@
                     <div class="row">
                         <div class="col form-group">
                             <label for="txtCliFactA">CliFactA:</label>
-                            <input type="text" id="txtCliFactA" value="" class="form-control" />
+                            <input type="text" id="txtCliFactA" placeholder="" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtCliViaMensajes">CliViaMensajes:</label>
-                            <input type="text" id="txtCliViaMensajes" value="" class="datep form-control" />
+                            <input type="text" id="txtCliViaMensajes" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtCliFacDescuento">CliFacDescuento:</label>
-                            <input type="number" id="txtCliFacDescuento" value="" class="number form-control" />
+                            <input type="number" id="txtCliFacDescuento" placeholder="0.0" class="number form-control" />
                         </div>
 
                     </div>
@@ -284,19 +288,19 @@
                     <div class="row">
                         <div class="col form-group">
                             <label>CliFactHonorarios:</label>
-                            <input type="number" id="txtCliFactHonorarios" class="number form-control" />
+                            <input type="number" id="txtCliFactHonorarios" placeholder="0.0" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliFactHonorariosImp:</label>
-                            <input type="number" id="txtCliFactHonorariosImp" class="number form-control" />
+                            <input type="number" id="txtCliFactHonorariosImp" placeholder="0.0" class="number form-control" />
                         </div>
                         <div class="col form-group">
                             <label for="txtRegOrigId">RegOrigId</label>
-                            <input type="text" id="txtRegOrigId" value="" class="form-control" />
+                            <input type="text" id="txtRegOrigId" placeholder="" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label>MetValID</label>
-                            <input type="text" id="txtMetValID" value="" class="form-control" />
+                            <input type="text" id="txtMetValID" placeholder="" class="form-control" />
                         </div>
                     </div>
                     <br />
@@ -365,7 +369,7 @@
                         </div>
                         <div class="col form-group">
                             <label for="CliSector">CliSector</label>
-                            <input type="number" id="txtCliSector" value="" class="form-control" />
+                            <input type="number" id="txtCliSector" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -406,10 +410,6 @@
                     <br />
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtCURP">CURP</label>
-                            <input type="text" id="txtCURP" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
                             <label for="txtAgrupCliCtaMex">AgrupCliCtaMex</label>
                             <input type="text" id="txtAgrupCliCtaMex" value="" class="form-control" />
                         </div>
@@ -432,10 +432,6 @@
                             <input type="text" id="txtFHAltaPor" value="" class="datep form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliObs">CliObs</label>
-                            <input type="text" id="txtCliObs" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
                             <label for="txtActualizo">Actualizo</label>
                             <input type="text" id="txtActualizo" value="" class="form-control" />
                         </div>
@@ -446,6 +442,12 @@
                         <div class="col form-group">
                             <label for="txtNombreCorto">NombreCorto</label>
                             <input type="text" id="txtNombreCorto" value="" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="txtCliObs">CliObs</label>
+                            <textarea id="txtCliObs" class="form-control" placeholder="Observaciones sobre el cliente"></textarea>
                         </div>
                     </div>
                     <br />
@@ -595,7 +597,7 @@
         var AgrupCliFede = $("input[id='txtAgrupCliFede']").val().trim();
         var AltaPor = $("input[id='txtAltaPor']").val().trim();
         var FHAltaPor = $("input[id='txtFHAltaPor']").val().trim();
-        var CliObs = $("input[id='txtCliObs']").val().trim();
+        var CliObs = $("#txtCliObs").val().trim();
         var Actualizo = $("input[id='txtActualizo']").val().trim();
         var FHActualizo = $("input[id='txtFHActualizo']").val().trim();
         var NombreCorto = $("input[id='txtNombreCorto']").val().trim();
