@@ -19,11 +19,12 @@
                         <label for="txtNombre">Nombre:</label>
                         <input type="text" id="txtNombre" placeholder="Nombre Empresa SA de CV" class="form-control" />
                     </div>
-                    <div class="form-group">
-                        <label for="txtDireccion">Direccion:</label>
-                        <input type="text" id="txtDireccion" placeholder="Calle Nombre" class="form-control" />
-                    </div>
+
                     <div class="row">
+                        <div class="col form-group">
+                            <label for="txtDireccion">Direccion:</label>
+                            <input type="text" id="txtDireccion" placeholder="Calle Nombre" class="form-control" />
+                        </div>
                         <div class="col form-group">
                             <label for="txtNumInt">Número Interior:</label>
                             <input type="text" id="txtNumInt" placeholder="Local A" class="form-control" />
@@ -106,16 +107,16 @@
     @* Otros datos *@
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Otros datos</h3>
                     <div class="card-tools">
                         <button class="btn btn-tool" type="button" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
                             <label for="lblCliDesde">Cliente desde:</label>
@@ -180,16 +181,16 @@
     @* Mas datos *@
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Texto</h3>
                     <div class="card-tools">
                         <button class="btn btn-tool" type="button" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
                             <label>TabID</label>
@@ -270,16 +271,16 @@
     @* datos *@
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Texto</h3>
                     <div class="card-tools">
                         <button class="btn btn-tool" type="button" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
                             <label>CliFactHonorarios:</label>
@@ -343,16 +344,16 @@
     @* y más datos *@
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Texto</h3>
                     <div class="card-tools">
                         <button class="btn btn-tool" type="button" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
                             <label>CliColonia</label>
@@ -495,7 +496,7 @@
         $('#txtTelefono').inputmask();
         $('#txtTelefono2').inputmask();
         $('#txtFAX').inputmask();
-
+        $(".money").inputmask({ alias: "currency", prefix: '$ ' });
     });
 
     $('#ddlPais').on('change', function() {
