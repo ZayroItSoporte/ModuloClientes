@@ -108,6 +108,38 @@
           <Property Name="PaisparaEtiq" Type="bit" />
           <Property Name="Pais6" Type="nvarchar" MaxLength="6" />
         </EntityType>
+        <Function Name="Ins_ClientesCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CLIENTE" Type="varchar" Mode="In" />
+          <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+          <Parameter Name="DIRECCION" Type="varchar" Mode="In" />
+          <Parameter Name="ClieNumInt" Type="varchar" Mode="In" />
+          <Parameter Name="ClieNumExt" Type="varchar" Mode="In" />
+          <Parameter Name="CIUDAD" Type="varchar" Mode="In" />
+          <Parameter Name="EstID" Type="varchar" Mode="In" />
+          <Parameter Name="PaisID" Type="varchar" Mode="In" />
+          <Parameter Name="CliCodPost" Type="varchar" Mode="In" />
+          <Parameter Name="CliRFC" Type="varchar" Mode="In" />
+          <Parameter Name="CliIRS" Type="varchar" Mode="In" />
+          <Parameter Name="TELEFONO" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono2" Type="varchar" Mode="In" />
+          <Parameter Name="CliColonia" Type="varchar" Mode="In" />
+          <Parameter Name="CURP" Type="varchar" Mode="In" />
+          <Parameter Name="AltaPor" Type="varchar" Mode="In" />
+          <Parameter Name="URL" Type="varchar" Mode="In" />
+          <Parameter Name="AgrupCliCtaMex" Type="varchar" Mode="In" />
+          <Parameter Name="AgrupCliCtaAm" Type="varchar" Mode="In" />
+          <Parameter Name="Identificador" Type="varchar" Mode="In" />
+          <Parameter Name="FAX" Type="varchar" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInsClienteObsPedimento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DESC" Type="int" Mode="In" />
+          <Parameter Name="LETL" Type="int" Mode="In" />
+          <Parameter Name="LIFA" Type="int" Mode="In" />
+          <Parameter Name="NOPA" Type="int" Mode="In" />
+          <Parameter Name="SERI" Type="int" Mode="In" />
+          <Parameter Name="CLIENTE" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="DbIS_CatalogosModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
@@ -199,6 +231,38 @@
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Estados" EntityType="DbIS_CatalogosModel.Estados" />
           <EntitySet Name="Paises" EntityType="DbIS_CatalogosModel.Paises" />
+          <FunctionImport Name="Ins_ClientesCatalogo" ReturnType="Collection(String)">
+            <Parameter Name="CLIENTE" Mode="In" Type="String" />
+            <Parameter Name="NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="ClieNumInt" Mode="In" Type="String" />
+            <Parameter Name="ClieNumExt" Mode="In" Type="String" />
+            <Parameter Name="CIUDAD" Mode="In" Type="String" />
+            <Parameter Name="EstID" Mode="In" Type="String" />
+            <Parameter Name="PaisID" Mode="In" Type="String" />
+            <Parameter Name="CliCodPost" Mode="In" Type="String" />
+            <Parameter Name="CliRFC" Mode="In" Type="String" />
+            <Parameter Name="CliIRS" Mode="In" Type="String" />
+            <Parameter Name="TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="Telefono2" Mode="In" Type="String" />
+            <Parameter Name="CliColonia" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="AltaPor" Mode="In" Type="String" />
+            <Parameter Name="URL" Mode="In" Type="String" />
+            <Parameter Name="AgrupCliCtaMex" Mode="In" Type="String" />
+            <Parameter Name="AgrupCliCtaAm" Mode="In" Type="String" />
+            <Parameter Name="Identificador" Mode="In" Type="String" />
+            <Parameter Name="FAX" Mode="In" Type="String" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsClienteObsPedimento">
+            <Parameter Name="DESC" Mode="In" Type="Int32" />
+            <Parameter Name="LETL" Mode="In" Type="Int32" />
+            <Parameter Name="LIFA" Mode="In" Type="Int32" />
+            <Parameter Name="NOPA" Mode="In" Type="Int32" />
+            <Parameter Name="SERI" Mode="In" Type="Int32" />
+            <Parameter Name="CLIENTE" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Estados">
           <Key>
@@ -337,6 +401,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Ins_ClientesCatalogo" FunctionName="DbIS_CatalogosModel.Store.Ins_ClientesCatalogo" />
+          <FunctionImportMapping FunctionImportName="spInsClienteObsPedimento" FunctionName="DbIS_CatalogosModel.Store.spInsClienteObsPedimento" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -12,6 +12,8 @@ namespace ModuloClientes
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbIS_CatalogosEntities : DbContext
     {
@@ -28,5 +30,127 @@ namespace ModuloClientes
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Estados> Estados { get; set; }
         public virtual DbSet<Paises> Paises { get; set; }
+    
+        public virtual ObjectResult<string> Ins_ClientesCatalogo(string cLIENTE, string nOMBRE, string dIRECCION, string clieNumInt, string clieNumExt, string cIUDAD, string estID, string paisID, string cliCodPost, string cliRFC, string cliIRS, string tELEFONO, string telefono2, string cliColonia, string cURP, string altaPor, string uRL, string agrupCliCtaMex, string agrupCliCtaAm, string identificador, string fAX, string usuario)
+        {
+            var cLIENTEParameter = cLIENTE != null ?
+                new ObjectParameter("CLIENTE", cLIENTE) :
+                new ObjectParameter("CLIENTE", typeof(string));
+    
+            var nOMBREParameter = nOMBRE != null ?
+                new ObjectParameter("NOMBRE", nOMBRE) :
+                new ObjectParameter("NOMBRE", typeof(string));
+    
+            var dIRECCIONParameter = dIRECCION != null ?
+                new ObjectParameter("DIRECCION", dIRECCION) :
+                new ObjectParameter("DIRECCION", typeof(string));
+    
+            var clieNumIntParameter = clieNumInt != null ?
+                new ObjectParameter("ClieNumInt", clieNumInt) :
+                new ObjectParameter("ClieNumInt", typeof(string));
+    
+            var clieNumExtParameter = clieNumExt != null ?
+                new ObjectParameter("ClieNumExt", clieNumExt) :
+                new ObjectParameter("ClieNumExt", typeof(string));
+    
+            var cIUDADParameter = cIUDAD != null ?
+                new ObjectParameter("CIUDAD", cIUDAD) :
+                new ObjectParameter("CIUDAD", typeof(string));
+    
+            var estIDParameter = estID != null ?
+                new ObjectParameter("EstID", estID) :
+                new ObjectParameter("EstID", typeof(string));
+    
+            var paisIDParameter = paisID != null ?
+                new ObjectParameter("PaisID", paisID) :
+                new ObjectParameter("PaisID", typeof(string));
+    
+            var cliCodPostParameter = cliCodPost != null ?
+                new ObjectParameter("CliCodPost", cliCodPost) :
+                new ObjectParameter("CliCodPost", typeof(string));
+    
+            var cliRFCParameter = cliRFC != null ?
+                new ObjectParameter("CliRFC", cliRFC) :
+                new ObjectParameter("CliRFC", typeof(string));
+    
+            var cliIRSParameter = cliIRS != null ?
+                new ObjectParameter("CliIRS", cliIRS) :
+                new ObjectParameter("CliIRS", typeof(string));
+    
+            var tELEFONOParameter = tELEFONO != null ?
+                new ObjectParameter("TELEFONO", tELEFONO) :
+                new ObjectParameter("TELEFONO", typeof(string));
+    
+            var telefono2Parameter = telefono2 != null ?
+                new ObjectParameter("Telefono2", telefono2) :
+                new ObjectParameter("Telefono2", typeof(string));
+    
+            var cliColoniaParameter = cliColonia != null ?
+                new ObjectParameter("CliColonia", cliColonia) :
+                new ObjectParameter("CliColonia", typeof(string));
+    
+            var cURPParameter = cURP != null ?
+                new ObjectParameter("CURP", cURP) :
+                new ObjectParameter("CURP", typeof(string));
+    
+            var altaPorParameter = altaPor != null ?
+                new ObjectParameter("AltaPor", altaPor) :
+                new ObjectParameter("AltaPor", typeof(string));
+    
+            var uRLParameter = uRL != null ?
+                new ObjectParameter("URL", uRL) :
+                new ObjectParameter("URL", typeof(string));
+    
+            var agrupCliCtaMexParameter = agrupCliCtaMex != null ?
+                new ObjectParameter("AgrupCliCtaMex", agrupCliCtaMex) :
+                new ObjectParameter("AgrupCliCtaMex", typeof(string));
+    
+            var agrupCliCtaAmParameter = agrupCliCtaAm != null ?
+                new ObjectParameter("AgrupCliCtaAm", agrupCliCtaAm) :
+                new ObjectParameter("AgrupCliCtaAm", typeof(string));
+    
+            var identificadorParameter = identificador != null ?
+                new ObjectParameter("Identificador", identificador) :
+                new ObjectParameter("Identificador", typeof(string));
+    
+            var fAXParameter = fAX != null ?
+                new ObjectParameter("FAX", fAX) :
+                new ObjectParameter("FAX", typeof(string));
+    
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("Usuario", usuario) :
+                new ObjectParameter("Usuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Ins_ClientesCatalogo", cLIENTEParameter, nOMBREParameter, dIRECCIONParameter, clieNumIntParameter, clieNumExtParameter, cIUDADParameter, estIDParameter, paisIDParameter, cliCodPostParameter, cliRFCParameter, cliIRSParameter, tELEFONOParameter, telefono2Parameter, cliColoniaParameter, cURPParameter, altaPorParameter, uRLParameter, agrupCliCtaMexParameter, agrupCliCtaAmParameter, identificadorParameter, fAXParameter, usuarioParameter);
+        }
+    
+        public virtual int spInsClienteObsPedimento(Nullable<int> dESC, Nullable<int> lETL, Nullable<int> lIFA, Nullable<int> nOPA, Nullable<int> sERI, string cLIENTE)
+        {
+            var dESCParameter = dESC.HasValue ?
+                new ObjectParameter("DESC", dESC) :
+                new ObjectParameter("DESC", typeof(int));
+    
+            var lETLParameter = lETL.HasValue ?
+                new ObjectParameter("LETL", lETL) :
+                new ObjectParameter("LETL", typeof(int));
+    
+            var lIFAParameter = lIFA.HasValue ?
+                new ObjectParameter("LIFA", lIFA) :
+                new ObjectParameter("LIFA", typeof(int));
+    
+            var nOPAParameter = nOPA.HasValue ?
+                new ObjectParameter("NOPA", nOPA) :
+                new ObjectParameter("NOPA", typeof(int));
+    
+            var sERIParameter = sERI.HasValue ?
+                new ObjectParameter("SERI", sERI) :
+                new ObjectParameter("SERI", typeof(int));
+    
+            var cLIENTEParameter = cLIENTE != null ?
+                new ObjectParameter("CLIENTE", cLIENTE) :
+                new ObjectParameter("CLIENTE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsClienteObsPedimento", dESCParameter, lETLParameter, lIFAParameter, nOPAParameter, sERIParameter, cLIENTEParameter);
+        }
     }
 }
