@@ -19,7 +19,6 @@
                         <label for="txtNombre">Nombre:</label>
                         <input type="text" id="txtNombre" placeholder="Nombre Empresa SA de CV" class="form-control" />
                     </div>
-
                     <div class="row">
                         <div class="col form-group">
                             <label for="txtDireccion">Direccion:</label>
@@ -33,22 +32,26 @@
                             <label for="txtNumInt">Número Exterior:</label>
                             <input type="text" id="txtNumExt" placeholder="4556" class="form-control" />
                         </div>
+                        <div class="col form-group">
+                            <label>CliColonia</label>
+                            <input type="text" id="txtCliColonia" value="" class="form-control" />
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
                             <label for="ddlPais">País:</label>
                             <select id="ddlPais" class="form-control">
-                                <option value="Seleccionar">Seleccionar</option>
+                                <option value="">Seleccionar</option>
                                 @foreach (Paises item in ViewBag.lpai)
                                 {
-                                    <option value="@item.PaisID">@item.PaisNombre</option>
+                                    <option value="@item.PaisIDSAIIM3">@item.PaisNombre</option>
                                 }
                             </select>
                         </div>
                         <div class="col form-group">
                             <label for="ddlEstado">Estado:</label>
                             <select id="ddlEstado" class="form-control">
-                                <option value="Seleccionar">Seleccionar</option>
+                                <option value="">Seleccionar</option>
                                 @foreach (Estados item in ViewBag.lest)
                                 {
                                     <option value="@item.EstID">@item.EstNombre</option>
@@ -102,6 +105,20 @@
                         <div class="col form-group">
                             <label for="txtFAX">FAX:</label>
                             <input type="text" id="txtFAX" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="txtAgrupCliCtaMex">AgrupCliCtaMex</label>
+                            <input type="text" id="txtAgrupCliCtaMex" value="" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtAgrupCliCtaAm">AgrupCliCtaAm</label>
+                            <input type="text" id="txtAgrupCliCtaAm" value="" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="txtAltaPor">AltaPor</label>
+                            <input type="text" id="txtAltaPor" value="" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -360,10 +377,6 @@
                 <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
-                            <label>CliColonia</label>
-                            <input type="text" id="txtCliColonia" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
                             <label form="CliEsquina">CliEsquina</label>
                             <input type="text" id="txtCliEsquina" value="" class="form-control" />
                         </div>
@@ -410,20 +423,8 @@
                     <br />
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtAgrupCliCtaMex">AgrupCliCtaMex</label>
-                            <input type="text" id="txtAgrupCliCtaMex" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label for="txtAgrupCliCtaAm">AgrupCliCtaAm</label>
-                            <input type="text" id="txtAgrupCliCtaAm" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
                             <label for="txtAgrupCliFede">AgrupCliFede</label>
                             <input type="text" id="txtAgrupCliFede" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label for="txtAltaPor">AltaPor</label>
-                            <input type="text" id="txtAltaPor" value="" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -504,8 +505,11 @@
     $('#ddlPais').on('change', function() {
         var Paisid = $("#ddlPais option:selected").val();
         //const data = new FormData();
+        //$('#ddlEstado').append(optionhtml).selectpicker('refresh');
 
-        $.ajax({
+
+
+        @*$.ajax({
                 type: "POST",
                 url: '@Url.Action("LlenaEstados", "Dashboard")',
                 data: { Paisid: Paisid },
@@ -515,7 +519,7 @@
                 error: function () {
                     alert(message);
                 }
-            });
+            });*@
     });
 
     $('#btnGuardaCli').click(function (e) {
@@ -547,10 +551,14 @@
         var CliHandlingIm = $("input[id='txtCliHandlingIm']").val().trim();
         var CliAcumTransAñoP = $("input[id='txtCliAcumTransAñoP']").val().trim();
         var CliAcumTransAñoD = $("input[id='txtCliAcumTransAñoD']").val().trim();
-        var CliAcumPesos = $("input[id='txtCliAcumPesos']").val().trim();
-        var CliAcumDolar = $("input[id='txtCliAcumDolar']").val().trim();
-        var CliPagaPesos = $("input[id='txtCliPagaPesos']").val().trim();
-        var CliPagaDolar = $("input[id='txtCliPagaDolar']").val().trim();
+        var acumpe = $("input[id='txtCliAcumPesos']").val();
+        var CliAcumPesos = Number(acumpe.replace(/[^0-9.-]+/g, ""));
+        var acumdo = $("input[id='txtCliAcumDolar']").val();
+        var CliAcumDolar = Number(acumdo.replace(/[^0-9.-]+/g, ""));
+        var pagape = $("input[id='txtCliPagaPesos']").val();
+        var CliPagaPesos = Number(pagape.replace(/[^0-9.-]+/g, ""));
+        var pagado = $("input[id='txtCliPagaDolar']").val();
+        var CliPagaDolar = Number(pagado.replace(/[^0-9.-]+/g, ""));
         var CliTotTrans = $("input[id='txtCliTotTrans']").val().trim();
         //#endregion
 
@@ -763,7 +771,6 @@
 <!--CARGAR CLIENTE-->
 @if (ViewBag.cliente != null)
 {
-
     <script>
 
     var cliente = @Html.Raw(Json.Encode(ViewBag.cliente));

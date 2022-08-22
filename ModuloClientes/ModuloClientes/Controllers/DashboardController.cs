@@ -75,14 +75,22 @@ namespace ModuloClientes.Controllers
         }
 
         [HttpPost]
-        public ActionResult LlenaEstados(string Paisid)
+        public JsonResult LlenaEstados(string Paisid)
         {
-            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
-            List<Estados> lest = db.Estados.ToList();
-            //List<Estados> lest = db.Estados.Where(f => f.PaisID == Paisid).ToList();
-            ViewBag.lest = lest;
+            try
+            {
+                DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+                //List<Estados> lest = db.Estados.ToList();
+                List<Estados> lest = db.Estados.Where(f => f.EstPais == Paisid).ToList();
+                ViewBag.lest = lest;
 
-            return View();
+                return Json(new { erro = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception x)
+            {
+                return Json(new { erro = false, message = x.Message }, JsonRequestBehavior.AllowGet);
+            }
+            
         }
 
         [HttpPost]
