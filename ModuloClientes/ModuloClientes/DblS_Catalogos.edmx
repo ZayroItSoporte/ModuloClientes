@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DbIS_CatalogosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="BitConsecutivo" />
+          </Key>
+          <Property Name="BitConsecutivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BitFecha" Type="smalldatetime" Nullable="false" />
+          <Property Name="BitUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="BitAccion" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="BitAccionBackup" Type="xml" Nullable="false" />
+          <Property Name="BitNotas" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="CLIENTE" />
@@ -108,6 +119,18 @@
           <Property Name="PaisparaEtiq" Type="bit" />
           <Property Name="Pais6" Type="nvarchar" MaxLength="6" />
         </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="UsuID" />
+          </Key>
+          <Property Name="UsuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuNombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="UsuUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UsuContrasena" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UsuTipo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UsuCorreo" Type="varchar" MaxLength="50" />
+          <Property Name="UsuActivo" Type="bit" Nullable="false" />
+        </EntityType>
         <Function Name="Ins_ClientesCatalogo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CLIENTE" Type="varchar" Mode="In" />
           <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
@@ -141,9 +164,11 @@
           <Parameter Name="CLIENTE" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="DbIS_CatalogosModelStoreContainer">
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -263,6 +288,8 @@
             <Parameter Name="SERI" Mode="In" Type="Int32" />
             <Parameter Name="CLIENTE" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Bitacora" EntityType="DbIS_CatalogosModel.Bitacora" />
+          <EntitySet Name="Usuarios" EntityType="DbIS_CatalogosModel.Usuarios" />
         </EntityContainer>
         <EntityType Name="Estados">
           <Key>
@@ -288,6 +315,29 @@
           <Property Name="PaisAviso" Type="Boolean" />
           <Property Name="PaisparaEtiq" Type="Boolean" />
           <Property Name="Pais6" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="BitConsecutivo" />
+          </Key>
+          <Property Name="BitConsecutivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BitFecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BitUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BitAccion" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BitAccionBackup" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BitNotas" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="UsuID" />
+          </Key>
+          <Property Name="UsuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuNombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UsuUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UsuContrasena" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UsuTipo" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UsuCorreo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuActivo" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -403,6 +453,31 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Ins_ClientesCatalogo" FunctionName="DbIS_CatalogosModel.Store.Ins_ClientesCatalogo" />
           <FunctionImportMapping FunctionImportName="spInsClienteObsPedimento" FunctionName="DbIS_CatalogosModel.Store.spInsClienteObsPedimento" />
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="DbIS_CatalogosModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="BitNotas" ColumnName="BitNotas" />
+                <ScalarProperty Name="BitAccionBackup" ColumnName="BitAccionBackup" />
+                <ScalarProperty Name="BitAccion" ColumnName="BitAccion" />
+                <ScalarProperty Name="BitUsuario" ColumnName="BitUsuario" />
+                <ScalarProperty Name="BitFecha" ColumnName="BitFecha" />
+                <ScalarProperty Name="BitConsecutivo" ColumnName="BitConsecutivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="DbIS_CatalogosModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="UsuActivo" ColumnName="UsuActivo" />
+                <ScalarProperty Name="UsuCorreo" ColumnName="UsuCorreo" />
+                <ScalarProperty Name="UsuTipo" ColumnName="UsuTipo" />
+                <ScalarProperty Name="UsuContrasena" ColumnName="UsuContrasena" />
+                <ScalarProperty Name="UsuUsuario" ColumnName="UsuUsuario" />
+                <ScalarProperty Name="UsuNombre" ColumnName="UsuNombre" />
+                <ScalarProperty Name="UsuID" ColumnName="UsuID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
