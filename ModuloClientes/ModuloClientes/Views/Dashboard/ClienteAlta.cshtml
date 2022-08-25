@@ -507,19 +507,29 @@
         //const data = new FormData();
         //$('#ddlEstado').append(optionhtml).selectpicker('refresh');
 
-
-
-        @*$.ajax({
-                type: "POST",
-                url: '@Url.Action("LlenaEstados", "Dashboard")',
-                data: { Paisid: Paisid },
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("LlenaEstados", "Dashboard")',
+            data: { Paisid: Paisid },
+            dataType: "json",
             success: function (data) {
-                alert('id del pais' + Paisid);
-                },
-                error: function () {
-                    alert(message);
-                }
-            });*@
+                $("#ddlEstado").empty();
+                //var ddlest = $('#ddlEstado')
+                var ddlest =  
+
+                $.each(data, function (val, text) {
+                    ddlest.append($('<option></option>').val(val).html(text));
+                });
+
+                //var estados = @Html.Raw(Json.Encode(ViewBag.nlest));
+                //$.each(estados, function (i,g) {
+                    //$('<option>').val(g.EstID).text(g.EstNombre).appendTo('#ddlEstado');
+                //});
+            },
+            error: function () {
+                alert(message);
+            }
+        });
     });
 
     $('#btnGuardaCli').click(function (e) {

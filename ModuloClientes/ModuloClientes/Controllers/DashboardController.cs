@@ -37,8 +37,18 @@ namespace ModuloClientes.Controllers
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 Clientes nc = c;
+                string clid;
+                using (db)
+                {
+                    int cons = db.Database.SqlQuery<int>("SELECT MAX(CONVERT(int, CLIENTE))+1 AS CLIENTE FROM CLIENTES").FirstOrDefault();
+                    clid = cons.ToString();
+                    while (clid.Length < 4)
+                    {
+                        clid = "0" + clid;
+                    }
+                }
 
-                nc.CLIENTE = "0003";
+                c.CLIENTE = clid;
                 //db.Clientes.Add(nc);
                 db.Ins_ClientesCatalogo(c.CLIENTE,
                     c.NOMBRE,
