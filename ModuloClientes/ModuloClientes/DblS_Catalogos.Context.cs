@@ -30,6 +30,8 @@ namespace ModuloClientes
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Estados> Estados { get; set; }
         public virtual DbSet<Paises> Paises { get; set; }
+        public virtual DbSet<Bitacora> Bitacora { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     
         public virtual ObjectResult<string> Ins_ClientesCatalogo(string cLIENTE, string nOMBRE, string dIRECCION, string clieNumInt, string clieNumExt, string cIUDAD, string estID, string paisID, string cliCodPost, string cliRFC, string cliIRS, string tELEFONO, string telefono2, string cliColonia, string cURP, string altaPor, string uRL, string agrupCliCtaMex, string agrupCliCtaAm, string identificador, string fAX, string usuario)
         {

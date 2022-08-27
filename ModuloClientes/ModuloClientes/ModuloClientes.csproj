@@ -140,6 +140,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bitacora.cs">
+      <DependentUpon>DblS_Catalogos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <DependentUpon>DblS_Catalogos.tt</DependentUpon>
     </Compile>
@@ -170,8 +173,12 @@
       <DependentUpon>DblS_Catalogos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>DblS_Catalogos.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\ISAA.png" />
     <Content Include="assets\user.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -2483,6 +2490,8 @@
     <Content Include="Views\Dashboard\ClienteAlta.cshtml" />
     <Content Include="Views\Dashboard\ClienteListado.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Dashboard\UsuarioListado.cshtml" />
+    <Content Include="Views\Dashboard\UsuarioAlta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

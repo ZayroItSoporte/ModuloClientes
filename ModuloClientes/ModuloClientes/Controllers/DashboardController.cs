@@ -83,6 +83,22 @@ namespace ModuloClientes.Controllers
             }
 
         }
+        
+        public ActionResult UsuarioAlta(string id)
+        {
+            DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
+            List<Paises> lpai = db.Paises.ToList();
+            ViewBag.lpai = lpai;
+
+            List<Estados> lest = db.Estados.ToList();
+            ViewBag.lest = lest;
+
+            Clientes cliente = db.Clientes.Where(x => x.CLIENTE == id).SingleOrDefault();
+            ViewBag.cliente = cliente;
+            ViewBag.id = id;
+
+            return View();
+        }
 
         [HttpPost]
         public JsonResult LlenaEstados(string Paisid)

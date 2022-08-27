@@ -19,21 +19,21 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+                <img src="~/assets/ISAA.png" />
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Ingrese sus datos para iniciar sesión</p>
 
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="text" class="form-control" placeholder="Usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -46,7 +46,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button id="btnLogIn" type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button id="btnLogIn" type="submit" class="btn btn-primary btn-block">Ingresar</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -65,15 +65,50 @@
     <!-- AdminLTE App -->
     @*<script src="../../dist/js/adminlte.min.js"></script>*@
 
-    <script>
+<script>
 
         $('#btnLogIn').on('click', function () {
 
             window.location.href = '@Url.Action("Index", "Dashboard")';
 
+            @*$.ajax({
+                url: "@Url.Action("Ingresar", "Home")", // Url
+                type: "Post",  // Verbo HTTP
+                data: data,
+                // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+                processData: false, contentType: false,
+                success: function (response) {
+                    if (response.error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Hubo un problema',
+                            text: response.message,
+                            footer: '<br> Si el problema persiste, comuníquese [correo] junto con la pantalla de error.'
+                        });
+                    }
+                    else {
+                        switch () {
+                            case "Incorrecto":
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Usuario y/o contraseña incorrectos',
+                                    text: response.message,
+                                    footer: '<br> Revise sus datos o consulte con []'
+                                });
+                                break;
+                            case "Correcto":
+                                 window.location.href = '@Url.Action("Index", "Dashboard")';
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            });*@
+
         });
 
-    </script>
+</script>
 
 </body>
 
