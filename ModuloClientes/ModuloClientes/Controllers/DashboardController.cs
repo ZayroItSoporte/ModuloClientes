@@ -94,11 +94,14 @@ namespace ModuloClientes.Controllers
                 List<Estados> lest = db.Estados.Where(f => f.EstPais == Paisid).ToList();
                 ViewBag.lest = lest;
 
-                return Json(new { erro = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
+                var jsonEst = Json(lest, JsonRequestBehavior.AllowGet);
+                jsonEst.MaxJsonLength = Int32.MaxValue;
+
+                return jsonEst;
             }
             catch (Exception x)
             {
-                return Json(new { erro = false, message = x.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { error = false, message = x.Message }, JsonRequestBehavior.AllowGet);
             }
             
         }

@@ -513,18 +513,23 @@
             data: { Paisid: Paisid },
             dataType: "json",
             success: function (data) {
-                $("#ddlEstado").empty();
-                //var ddlest = $('#ddlEstado')
-                var ddlest =  
-
-                $.each(data, function (val, text) {
-                    ddlest.append($('<option></option>').val(val).html(text));
-                });
-
-                //var estados = @Html.Raw(Json.Encode(ViewBag.nlest));
-                //$.each(estados, function (i,g) {
-                    //$('<option>').val(g.EstID).text(g.EstNombre).appendTo('#ddlEstado');
-                //});
+                if (data.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Hubo un problema',
+                        text: response.message,
+                        footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                    });
+                }
+                else {
+                    $("#ddlEstado").empty();
+                    $.each(data, function (val, text) {
+                        $('#ddlEstado').append($('<option>', {
+                            value: text.EstID,
+                            text: text.EstNombre
+                        }));
+                    });
+                }
             },
             error: function () {
                 alert(message);
