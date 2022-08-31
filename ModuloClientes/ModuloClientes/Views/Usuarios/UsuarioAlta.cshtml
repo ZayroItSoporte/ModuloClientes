@@ -1,0 +1,64 @@
+﻿
+<input hidden id="idCliente" value="0" />
+
+<div class="container-fluid">
+    @* Datos generales *@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Datos Generales</h3>
+                    <div class="card-tools">
+                        <button class="btn btn-tool" type="button" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label for="txtNombre">Usuario:</label>
+                            <input type="text" id="txtUser" placeholder="Usuario" class="form-control" />
+                        </div>
+
+                        <div class="col-4 form-group">
+                            <label for="txtPass">Contraseña:</label>
+                            <input type="text" id="txtPass" placeholder="Contraseña" class="form-control" />
+                        </div>
+
+                        <div class="col-4 form-group">
+                            <label for="txtCorreo">Correo Electronico:</label>
+                            <input type="text" id="txtCorreo" placeholder="Contraseña" class="form-control" />
+                        </div>
+
+                        <div class="col-6 form-group">
+                            <label>Tipo de Usuario:</label>
+                            <div class="row">
+                                <div class="form-group clearfix">
+                                    <div class="icheck-primary d-inline">
+                                        <input type="radio" id="radioPrimary1" name="r1" checked="">
+                                        <label for="radioPrimary1">Administrador</label>
+                                    </div>
+                                    <div class="icheck-primary d-inline">
+                                        <input type="radio" id="radioPrimary2" name="r1">
+                                        <label for="radioPrimary2">Operacion</label>
+                                    </div>
+                                    <div class="icheck-primary d-inline">
+                                        <input type="radio" id="radioPrimary3" name="r1" disabled="">
+                                        <label for="radioPrimary3">Lectura</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                      
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@*<script src="~/plugins/inputmask/inputmask.min.js"></script>*@
+<script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
