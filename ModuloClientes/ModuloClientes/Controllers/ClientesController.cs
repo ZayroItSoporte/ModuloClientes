@@ -28,7 +28,6 @@ namespace ModuloClientes.Controllers
             }
         }
 
-
         public ActionResult ClienteAlta(string id)
         {
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();

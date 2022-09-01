@@ -1,5 +1,6 @@
 ﻿
-<input hidden id="idCliente" value="0" />
+<input hidden id="idUsuario" value="0" />
+
 
 <div class="container-fluid">
     @* Datos generales *@
@@ -16,49 +17,157 @@
                 </div>
                 <div class="card-body">
 
-                    <div class="row">
-                        <div class="col-4 form-group">
-                            <label for="txtNombre">Usuario:</label>
-                            <input type="text" id="txtUser" placeholder="Usuario" class="form-control" />
-                        </div>
+                    <div id="form">
+                        <div class="row">
+                            <div class="col-3 form-group">
+                                <label for="txtNombre">Usuario:</label>
+                                <input type="text" id="txtUser" placeholder="Usuario" class="form-control" />
+                            </div>
 
-                        <div class="col-4 form-group">
-                            <label for="txtPass">Contraseña:</label>
-                            <input type="text" id="txtPass" placeholder="Contraseña" class="form-control" />
-                        </div>
+                            <div class="col-3 form-group">
+                                <label for="txtPass">Contraseña:</label>
+                                <input type="text" id="txtPass" placeholder="Contraseña" class="form-control" />
+                            </div>
 
-                        <div class="col-4 form-group">
-                            <label for="txtCorreo">Correo Electronico:</label>
-                            <input type="text" id="txtCorreo" placeholder="Contraseña" class="form-control" />
-                        </div>
+                            <div class="col-3 form-group">
+                                <label for="txtNombre">Nombre:</label>
+                                <input type="text" id="txtNombre" placeholder="Nombre" class="form-control" />
+                            </div>
 
-                        <div class="col-6 form-group">
-                            <label>Tipo de Usuario:</label>
-                            <div class="row">
-                                <div class="form-group clearfix">
-                                    <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary1" name="r1" checked="">
-                                        <label for="radioPrimary1">Administrador</label>
-                                    </div>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary2" name="r1">
-                                        <label for="radioPrimary2">Operacion</label>
-                                    </div>
-                                    <div class="icheck-primary d-inline">
-                                        <input type="radio" id="radioPrimary3" name="r1" disabled="">
-                                        <label for="radioPrimary3">Lectura</label>
+                            <div class="col-3 form-group">
+                                <label for="txtCorreo">Correo Electronico:</label>
+                                <input type="text" id="txtCorreo" placeholder="Contraseña" class="form-control" />
+                            </div>
+
+                            <div class="col-6 form-group">
+                                <label>Tipo de Usuario:</label>
+                                <div class="row">
+                                    <div class="form-group clearfix">
+                                        <div class="icheck-primary d-inline">
+                                            <input type="radio" id="radioPrimary1" name="r1" value="A" checked="">
+                                            <label for="radioPrimary1">Administrador</label>
+                                        </div>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="radio" id="radioPrimary2" name="r1" value="O">
+                                            <label for="radioPrimary2">Operacion</label>
+                                        </div>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="radio" id="radioPrimary3" name="r1" value="L">
+                                            <label for="radioPrimary3">Lectura</label>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-block btn-dark btn-lg" type="submit" id="btnGuardaUsu">Guardar</button>
                             </div>
                         </div>
 
                     </div>
-                      
+
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
 @*<script src="~/plugins/inputmask/inputmask.min.js"></script>*@
 <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('.loader').hide();
+        $('#container').show();
+    });
+
+    $('#btnGuardaUsu').click(function (e) {
+        e.preventDefault();
+
+        var User = $("input[id='txtUser']").val().trim();
+        var Nombre = $("input[id='txtNombre']").val().trim();
+        var Contrasenia = $("input[id='txtPass']").val().trim();
+        var Correo = $("input[id='txtCorreo']").val().trim();
+
+        var tipo = $('input[name=r1]:checked').val();
+
+        const data = new FormData();
+
+        data.append("UsuUsuario", User);
+        data.append("UsuNombre", Nombre);
+        data.append("UsuContrasena", Contrasenia);
+        data.append("UsuCorreo", Correo);
+        data.append("UsuTipo", tipo);
+
+        //Cliente ID
+        var usuarioID = $('#idUsuario').val();
+
+        if (usuarioID == 0) {
+
+            $.ajax({
+                url: "@Url.Action("UsuarioInserta", "Usuarios")", // Url
+                type: "Post",  // Verbo HTTP
+                data: data,
+                // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+                processData: false, contentType: false,
+                success: function (response) {
+                    if (response.error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Hubo un problema',
+                            text: response.message,
+                            footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: '¡Usuario listo!',
+                            confirmButtonText: 'Excelente',
+                        }).then((result) => {
+                            //Esto redirecciona a una vista diferente
+                        @*window.location.href = '@Url.Action("ClienteAlta", "Dashboard")';*@
+                        });
+                    }
+                }
+            });
+
+        }
+        else {
+
+            data.append("CLIENTE", usuarioID);
+
+            $.ajax({
+                url: "@Url.Action("ClienteModifica", "Dashboard")", // Url
+                type: "Post",  // Verbo HTTP
+                data: data,
+                // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
+                processData: false, contentType: false,
+                success: function (response) {
+                    if (response.error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Hubo un problema',
+                            text: response.message,
+                            footer: '<br> Si el problema persiste, comuníquese a sistemas@zayro.com junto con la pantalla de error.'
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: '¡Cliente Modificado!',
+                            confirmButtonText: 'Excelente',
+                        }).then((result) => {
+                            //Esto redirecciona a una vista diferente
+                        @*window.location.href = '@Url.Action("ClienteAlta", "Dashboard")';*@
+                        });
+                    }
+                }
+            });
+        }
+
+    });
+
+</script>

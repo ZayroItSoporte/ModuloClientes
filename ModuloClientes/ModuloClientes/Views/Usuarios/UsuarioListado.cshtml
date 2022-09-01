@@ -32,36 +32,21 @@
                     </div>
                     <div class="card-body">
 
-                        <div class="loader text-center">
-                            <div class="spinner-grow text-dark" role="status">
-                                <span class="sr-only"></span>
-                            </div>
-                            <div class="spinner-grow text-dark" role="status">
-                                <span class="sr-only"></span>
-                            </div>
-                            <div class="spinner-grow text-dark" role="status">
-                                <span class="sr-only"></span>
-                            </div>
-                            <div class="spinner-grow text-dark" role="status">
-                                <span class="sr-only"></span>
-                            </div>
-                        </div>
-
-                        <div style="display:none;" class="table-responsive-lg p-b-25">
+                        <div class="table-responsive-lg p-b-25">
                             <table id="table"
                                    data-toolbar="#toolbar"
                                    data-detail-view="true"
-                                   data-detail-formatter="detailFormatter"
                                    data-search="true"
                                    class="table table-hover">
                                 <thead class="header">
                                     <tr>
-                                        <th data-field="CLIENTE" align="left">No.</th>
-                                        <th data-field="NOMBRE" align="left">Nombre</th>
-                                        <th data-field="CliRFC" align="left">RFC</th>
-                                        <th data-field="CURP" align="left">CURP</th>
-                                        <th data-field="CliSSN" align="left">SSN</th>
-                                        <th data-field="CliActivo" data-formatter="cliActivoFormatter" align="left">Estado</th>
+                                        <th data-field="UsuID" align="left">ID</th>
+                                        <th data-field="UsuNombre" align="left">Nombre</th>
+                                        <th data-field="UsuCorreo" align="left">Correo</th>
+                                        <th data-field="UsuUsuario" align="left">Usuario</th>
+                                        <th data-field="UsuContrasena" align="left">Contraseña</th>
+                                        <th data-field="UsuTipo" data-formatter="usuTipoFormatter" align="left">Tipo</th>
+                                        <th data-field="UsuActivo" data-formatter="usuActivoFormatter" align="left">Estado</th>
                                         <th data-formatter="accionesFormatter" class="acciones" align="center">Acciones</th>
                                     </tr>
                                 </thead>
@@ -79,17 +64,13 @@
 
 <script src="~/plugins/bootstra-table 5/bootstrap-table.js"></script>
 <script src="~/plugins/bootstra-table 5/bootstrap-table-locale-all.js"></script>
- 
+
 <script>
 
     $(document).ready(function () {
 
-
-        $('.loader').show();
-        $('.table-responsive-lg').hide();
-
         $.ajax({
-            url: "@Url.Action("CargarClientes", "Dashboard")",
+            url: "@Url.Action("CargarUsuarios", "Usuarios")",
             type: "GET",
             async: false,
             success: function (response) {
@@ -103,11 +84,11 @@
                     pagination: true,
                     pageSize: 50,
                     pageList: [25, 50, 100],
-                    sortOrder: 'CLIENTE',
+                    sortOrder: 'ID',
                 });
 
                 $('.loader').hide();
-                $('.table-responsive-lg').show();
+                $('#container').show();
             }
         });
 
@@ -117,58 +98,24 @@
 
     //#region FORMATTER'S
 
-    function detailFormatter(index, row) {
+    function usuTipoFormatter(value, row, index) {
 
+        var html = '<div class="text-center">';
 
-        var html = '<div class="row">' +
+        switch (value) {
+            case "A": html += '<span class="badge p-2 btn-success" style="color: white; width: 80%;">Administrador</span>'; break;
+            case "O": html += '<span class="badge p-2 btn-primary" style="color: white; width: 80%;">Operacion</span>'; break;
+            case "L": html += '<span class="badge p-2 btn-secondary" style="color: white; width: 80%;">Lectura</span>'; break;
+            default: break;
 
+        }
 
-            '<div class="col-6">' +
+        html += '</div >';
 
-            '<div class="card card-primary">' +
-            '<div class="card-header"><h5 class="card-header">Datos Generales</h5></div>' +
-            '<div class="card-body">' +
-            '<div class="row">' +
-
-            //DATOS GENERALES
-            '<div class="col-4"><b>Telefonos: </b>' + row.TELEFONO + ' | ' + row.Telefono2 + '</div>' +
-            '<div class="col-4"><b>Pagina Web: </b>' + row.URL + '</div>' +
-            '<div class="col-4"><b>Fax: </b>' + row.FAX + '</div>' +
-            '</div>' + //row
-            '</div>' + //card-body
-            '</div>' + //card
-            '</div>' + //col-6
-
-            '<div class="col-6">' +
-
-            '<div class="card card-primary">' +
-            '<div class="card-header"><h5 class="card-header">Ubicacion</h5></div>' +
-            '<div class="card-body">' +
-            '<div class="row">' +
-
-            //UBICACION
-            '<div class="col-3"><b>Ciudad: </b>' + row.CIUDAD + '</div>' +
-            '<div class="col-3"><b>Estado: </b>' + row.EstID + '</div>' +
-            '<div class="col-3"><b>Pais: </b>' + row.PaisID + '</div>' +
-            '<div class="col-3"><b>CP: </b>' + row.CliCodPost + '</div>' +
-            '<div class="col-3"><b>Direccion: </b>' + row.DIRECCION + '</div>' +
-            '<div class="col-3"><b>Num Interno: </b>' + row.ClieNumInt + '</div>' +
-            '<div class="col-3"><b>Num Externo: </b>' + row.ClieNumExt + '</div>' +
-            '<div class="col-3"><b>Colonia: </b>' + row.CliColonia + '</div>' +
-            '<div class="col-3"><b>Esquina: </b>' + row.CliEsquina + '</div>' +
-            '<div class="col-3"><b>Sector: </b>' + row.CliSector + '</div>' +
-            '</div>' + //row
-            '</div>' + //card-body
-            '</div>' + //card
-            '</div>'; //col-6
-
-
-
-
-        return html + '</div>';
+        return html;
     }
 
-    function cliActivoFormatter(value, row, index) {
+    function usuActivoFormatter(value, row, index) {
         return '<div class="text-center">' + (value ?
             '<span class="badge p-2 btn-success" style="color: white; width: 80%;">Activo</span>' :
             '<span class="badge p-2 btn-secondary" style="color: white; width: 80%;">Inactivo</span>') +
@@ -177,7 +124,7 @@
 
     function accionesFormatter(value, row, index) {
         var html = '<div id="btnAcciones" class="text-center">' +
-            '<button style="width: 40%; margin-right: 5px;" onclick="cargarClienteAlta(\''+ row.CLIENTE +'\');" type="button" title="Modificar Cliente" class="btn btn-success"> <i class="fa fa-edit"></i></button >' +
+            '<button style="width: 40%; margin-right: 5px;" onclick="cargarClienteAlta(\''+ row.ID +'\');" type="button" title="Modificar Cliente" class="btn btn-success"> <i class="fa fa-edit"></i></button >' +
             '<button style="width: 40%; margin-right: 5px;" onclick="" type="button" title="Dar de baja" class="btn btn-danger "><i class="fa fa-trash"></i></button>' +
             '</div >';
 
