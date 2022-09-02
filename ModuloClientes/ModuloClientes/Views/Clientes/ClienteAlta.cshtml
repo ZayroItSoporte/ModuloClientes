@@ -87,13 +87,13 @@
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtTelefono">Telefono:</label>
+                            <label for="txtTelefono">Teléfono:</label>
                             <div class="input-group">
                                 <input type="text" id="txtTelefono" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                             </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtTelefono2">Telefono 2:</label>
+                            <label for="txtTelefono2">Teléfono 2:</label>
                             <div class="input-group">
                                 <input type="text" id="txtTelefono2" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                             </div>
@@ -513,7 +513,7 @@
 
         $.ajax({
             type: "POST",
-            url: '@Url.Action("LlenaEstados", "Dashboard")',
+            url: '@Url.Action("LlenaEstados", "Clientes")',
             data: { Paisid: Paisid },
             dataType: "json",
             success: function (data) {
@@ -725,7 +725,7 @@
         if (clienteID == 0) {
 
             $.ajax({
-                url: "@Url.Action("ClienteInserta", "Dashboard")", // Url
+                url: "@Url.Action("ClienteInserta", "Clientes")", // Url
                 type: "Post",  // Verbo HTTP
                 data: data,
                 // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
@@ -757,7 +757,7 @@
             data.append("CLIENTE", clienteID);
 
             $.ajax({
-                url: "@Url.Action("ClienteModifica", "Dashboard")", // Url
+                url: "@Url.Action("ClienteModifica", "Clientes")", // Url
                 type: "Post",  // Verbo HTTP
                 data: data,
                 // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
