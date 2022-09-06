@@ -27,6 +27,7 @@ namespace ModuloClientes.Controllers
                 }
                 else
                 {
+                    Session["user"] = user;
                     return Json(new { error = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
                 }
             }

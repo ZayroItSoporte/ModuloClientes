@@ -30,6 +30,7 @@ namespace ModuloClientes.Controllers
 
         public ActionResult ClienteAlta(string id)
         {
+            string user = Session["user"] as string;
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
             List<Paises> lpai = db.Paises.ToList();
             ViewBag.lpai = lpai;
