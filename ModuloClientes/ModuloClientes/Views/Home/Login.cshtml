@@ -25,7 +25,7 @@
                 <p class="login-box-msg">Ingrese sus datos para iniciar sesión</p>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input id="txtUsuario" type="text" class="form-control" placeholder="Usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input id="txtContrasena" type="password" class="form-control" placeholder="Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -68,8 +68,14 @@
 <script>
 
         $('#btnLogIn').on('click', function () {
+            debugger;
+            var user = $("input[id='txtUsuario']").val().trim();
+            var password = $("input[id='txtContrasena']").val().trim();
 
-            window.location.href = '@Url.Action("Index", "Dashboard")';
+            const data = new FormData();
+
+            data.append("user", user);
+            data.append("pass", password);
 
             $.ajax({
                 url: "@Url.Action("Ingresar", "Home")", // Url
@@ -87,7 +93,7 @@
                         });
                     }
                     else {
-                        switch (respone.message) {
+                        switch (response.message) {
                             case "Incorrecto":
                                 Swal.fire({
                                     icon: 'error',

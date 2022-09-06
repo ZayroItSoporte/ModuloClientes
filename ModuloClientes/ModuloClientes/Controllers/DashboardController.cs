@@ -11,6 +11,7 @@ namespace ModuloClientes.Controllers
         // GET: Dashboard
         public ActionResult Index()
         {
+            //string user = Session["user"] as string;
             return View();
         }
 
