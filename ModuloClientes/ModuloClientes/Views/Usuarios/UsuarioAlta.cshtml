@@ -138,10 +138,10 @@
         }
         else {
 
-            data.append("CLIENTE", usuarioID);
+            data.append("UsuID", usuarioID);
 
             $.ajax({
-                url: "@Url.Action("ClienteModifica", "Dashboard")", // Url
+                url: "@Url.Action("UsuarioModifica", "Usuarios")", // Url
                 type: "Post",  // Verbo HTTP
                 data: data,
                 // Si vas a utilizar “formData” para crear el objeto que enviaras, es muy importante incluir estos
@@ -157,7 +157,7 @@
                     }
                     else {
                         Swal.fire({
-                            title: '¡Cliente Modificado!',
+                            title: '¡Usuario Modificado!',
                             confirmButtonText: 'Excelente',
                         }).then((result) => {
                             //Esto redirecciona a una vista diferente
@@ -171,3 +171,21 @@
     });
 
 </script>
+
+<!--CARGAR CLIENTE-->
+@if (ViewBag.usuario != null)
+{
+    <script>
+
+        var usuario = @Html.Raw(Json.Encode(ViewBag.usuario));
+
+        $('#idUsuario').val(usuario.UsuID);
+        $("input[id='txtUser']").val(usuario.UsuUsuario);
+        $("input[id='txtNombre']").val(usuario.UsuNombre);
+        $("input[id='txtPass']").val(usuario.UsuUsuario);
+        $("input[id='txtCorreo']").val(usuario.UsuCorreo);
+        $("input[name=r1][value=" + usuario.UsuTipo + "]").attr('checked', 'checked');
+
+    </script>
+
+}
