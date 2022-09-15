@@ -28,6 +28,7 @@ namespace ModuloClientes.Controllers
                 else
                 {
                     Session["user"] = user;
+                    Session["tipo"] = usuario.UsuTipo;
                     return Json(new { error = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
                 }
             }

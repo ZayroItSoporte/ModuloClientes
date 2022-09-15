@@ -66,6 +66,15 @@
     @*<script src="../../dist/js/adminlte.min.js"></script>*@
 
 <script>
+    debugger;
+    $('#txtContrasena').keypress(function (e) {
+        var key = e.which;
+        if (key == 13)  // the enter key code
+        {
+            $('#btnLogIn').click();
+            return false;
+        }
+    });   
 
         $('#btnLogIn').on('click', function () {
             debugger;

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ModuloClientes.Controllers
 {
@@ -31,6 +35,7 @@ namespace ModuloClientes.Controllers
         public ActionResult ClienteAlta(string id)
         {
             string user = Session["user"].ToString();
+            string tipo = Session["tipo"].ToString();
 
             DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
             List<Paises> lpai = db.Paises.ToList();
@@ -125,15 +130,46 @@ namespace ModuloClientes.Controllers
         [HttpPost]
         public JsonResult ClienteModifica(Clientes c)
         {
+            string user = Session["user"].ToString();
             try
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
                 Clientes nc = db.Clientes.Where(x => x.CLIENTE == c.CLIENTE).SingleOrDefault();
 
-                db.Entry(nc).CurrentValues.SetValues(c);
-                //nc = c;
+                #region Crear la estructura del XML para guardarlo en la bitácora
+                XmlDocument doc = new XmlDocument();
+                XmlElement root = doc.DocumentElement;
 
-                db.SaveChanges();
+                XmlElement elm1 = doc.CreateElement(string.Empty, "BACKUP", string.Empty);
+                doc.AppendChild(elm1);
+                XmlElement elm2 = doc.CreateElement(string.Empty, "Clientes", string.Empty);
+                elm1.AppendChild(elm2);
+
+                foreach (var prop in nc.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
+                {
+                    string ValProp = Convert.ToString(prop.GetValue(nc, null));
+                    string NomProp = prop.Name;
+                    XmlElement elm3 = doc.CreateElement(string.Empty, NomProp, string.Empty);
+                    XmlText text1 = doc.CreateTextNode(ValProp);
+                    elm2.AppendChild(elm3);
+                    elm3.AppendChild(text1);
+                }
+
+                string estructura = doc.InnerXml.ToString();
+                #endregion
+
+                Bitacora btc = new Bitacora();
+                btc.BitConsecutivo = 2;
+                btc.BitFecha = DateTime.Now;
+                btc.BitUsuario = user;
+                btc.BitAccion = "U";
+                btc.BitAccionBackup = estructura;
+
+                db.Bitacora.Add(btc);
+
+                db.Entry(nc).CurrentValues.SetValues(c);
+
+                db.SaveChanges(); //<<<--- HABILITAR ESTO PARA DESPUES DE PRUEBAS
 
                 return Json(new { error = false, message = "Correcto" }, JsonRequestBehavior.AllowGet);
             }
@@ -141,7 +177,6 @@ namespace ModuloClientes.Controllers
             {
                 return Json(new { error = true, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
-
         }
 
         [HttpPost]
@@ -150,7 +185,6 @@ namespace ModuloClientes.Controllers
             try
             {
                 DbIS_CatalogosEntities db = new DbIS_CatalogosEntities();
-                //List<Estados> lest = db.Estados.ToList();
                 List<Estados> lest = db.Estados.Where(f => f.EstPais == Paisid).ToList();
                 ViewBag.lest = lest;
 

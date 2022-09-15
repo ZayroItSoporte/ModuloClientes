@@ -126,7 +126,7 @@
         </div>
     </div>
     @* Otros datos *@
-    <div class="row">
+    <div id="otrosdatos" class="row">
         <div class="col-md-12">
             <div class="card card-primary collapsed-card">
                 <div class="card-header">
@@ -482,6 +482,12 @@
         </div>
     </div>
 </div>
+<script src="~/popperjs/core/dist/umd/popper.min.js"></script>
+<script src="~/tippy.js/dist/tippy-bundle.umd.js"></script>
+<link href="~/tippy.js/animations/shift-away.css" rel="stylesheet" />
+
+<link href="~/tippy.js/animations/scale.css" rel="stylesheet" />
+<link href="~/tippy.js/dist/tippy.css" rel="stylesheet" />
 
 @*<script src="~/plugins/inputmask/inputmask.min.js"></script>*@
 <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
@@ -792,11 +798,112 @@
 @if (ViewBag.cliente != null)
 {
     <script>
+        var tipo = '@Session["tipo"]';
+
+        // Limita a los usuarios de solo Lectura
+        if (tipo == 'L') {
+            // oculta div de otros datos
+            //$('#otrosdatos').hide();
+
+            //#region Datos generales
+            $("input[id='txtNombre']").prop('disabled', true);
+            $("input[id='txtNombre']").prop('disabled', true);
+            $("input[id='txtDireccion']").prop('disabled', true);
+            $("input[id='txtNumInt']").prop('disabled', true);
+            $("input[id='txtNumExt']").prop('disabled', true);
+            $("input[id='txtCiudad']").prop('disabled', true);
+            $("#ddlEstado").prop('disabled', 'disabled');
+            $("#ddlPais").prop('disabled', 'disabled');
+            $("input[id='txtCP']").prop('disabled', true);
+            $("input[id='txtRFC']").prop('disabled', true);
+            $("input[id='txtSSN']").prop('disabled', true);
+            $("input[id='txtIRS']").prop('disabled', true);
+            $("input[id='txtTelefono']").prop('disabled', true);
+            $("input[id='txtTelefono2']").prop('disabled', true);
+            $("input[id='txtURL']").prop('disabled', true);
+            $("input[id='txtFAX']").prop('disabled', true);
+            //#endregion
+
+            //#region Otros datos
+            $("input[id='txtCliDesde']").prop('disabled', true);
+            $("input[id='txtCliManejosEx']").prop('disabled', true);
+            $("input[id='txtCliServCompEx']").prop('disabled', true);
+            $("input[id='txtCliServCompIm']").prop('disabled', true);
+            $("input[id='txtCliHandlingIm']").prop('disabled', true);
+            $("input[id='txtCliAcumTransAñoP']").prop('disabled', true);
+            $("input[id='txtCliAcumTransAñoD']").prop('disabled', true);
+            $("input[id='txtCliAcumPesos']").prop('disabled', true);
+            $("input[id='txtCliAcumDolar']").prop('disabled', true);
+            $("input[id='txtCliPagaPesos']").prop('disabled', true);
+            $("input[id='txtCliPagaDolar']").prop('disabled', true);
+            $("input[id='txtCliTotTrans']").prop('disabled', true);
+            //#endregion
+
+            //#region Mas datos
+            $("input[id='txtTabID']").prop('disabled', true);
+            $("input[id='txtTabIDImp']").prop('disabled', true);
+            $("input[id='txtTabIDCtaAm']").prop('disabled', true);
+            $("input[id='txtTipPtoID']").prop('disabled', true);
+            $("input[id='txtTipPtoID1']").prop('disabled', true);
+            $("#chbCliRelAABCli").prop('disabled', true);
+            $("#chbCliRelAABPro").prop('disabled', true);
+            $("#chbCliRelAABPag").prop('disabled', true);
+            $("#chbCliRelAABDes").prop('disabled', true);
+            $("#chbCliManejosEsp").prop('disabled', true);
+            $("input[id='txtCliFactA']").prop('disabled', true);
+            $("input[id='txtCliViaMensajes']").prop('disabled', true);
+            $("input[id='txtCliFacDescuento']").prop('disabled', true);
+
+            $("input[id='txtCliFactHonorarios']").prop('disabled', true);
+            $("input[id='txtCliFactHonorariosImp']").prop('disabled', true);
+            $("input[id='txtRegOrigId']").prop('disabled', true);
+            $("input[id='txtMetValID']").prop('disabled', true);
+            $("#chbCliPITEX").prop('disabled', true);
+            $("#chbCliMaquiladora").prop('disabled', true);
+            $("#chbCliEnvaMatriz").prop('disabled', true);
+            $("#chbCliRegla8a").prop('disabled', true);
+            $("input[id='txtCliPasswordInternet']").prop('disabled', true);
+            $("input[id='txtCliFraccionR8a']").prop('disabled', true);
+            //#endregion
+
+            //#region y mas datos
+            $("input[id='txtCliColonia']").prop('disabled', true);
+            $("input[id='txtCliEsquina']").prop('disabled', true);
+            $("input[id='txtCliSector']").prop('disabled', true);
+            $("input[id='txtImpAraID']").prop('disabled', true);
+            $("input[id='txtIDProSec']").prop('disabled', true);
+            $("input[id='txtNumClienteTFM']").prop('disabled', true);
+            $("#chbActaConstitutiva").prop('disabled', true);
+            $("input[id='chbCIF']").prop('disabled', true);
+            $("input[id='chbR1-SHCP']").prop('disabled', true);
+            $("input[id='txtCURP']").prop('disabled', true);
+            $("input[id='txtAgrupCliCtaMex']").prop('disabled', true);
+            $("input[id='txtAgrupCliCtaAm']").prop('disabled', true);
+            $("input[id='txtAgrupCliFede']").prop('disabled', true);
+            $("input[id='txtAltaPor']").prop('disabled', true);
+            $("input[id='txtFHAltaPor']").prop('disabled', true);
+            $("#txtCliObs").prop('disabled', true);
+            $("input[id='txtActualizo']").prop('disabled', true);
+            $("input[id='txtFHActualizo']").prop('disabled', true);
+            $("input[id='txtNombreCorto']").prop('disabled', true);
+            $("#chbActivarPS").prop('disabled', true);
+            $("#chbActivarR8va").prop('disabled', true);
+            $("input[id='chbCliActivo']").prop('disabled', true);
+        //#endregion
+        }
+
+        //aqui hay que traer un la informacion del xml con los datos del cliente
+        tippy('#txtNombre', {
+            content: 'Info del Cliente',
+            animation: 'shift-away',
+            interactive: true,
+            arrow: false,
+            duration: 1000.
+        });
 
         var cliente = @Html.Raw(Json.Encode(ViewBag.cliente));
 
         //#region Datos generales
-
         $('#idCliente').val(cliente.CLIENTE);
         $("input[id='txtNombre']").val(cliente.NOMBRE);
         $("input[id='txtDireccion']").val(cliente.DIRECCION);
@@ -804,8 +911,8 @@
         $("input[id='txtNumExt']").val(cliente.ClieNumExt);
         $("input[id='txtCiudad']").val(cliente.CIUDAD);
 
-        $("#ddlPais").val(cliente.PaisID).change();
-        $("#ddlEstado").val(cliente.EstID).change();
+        $(`#ddlPais option[value='${cliente.PaisID}']`).prop('selected', true);
+        $(`#ddlEstado option[value='${cliente.EstID}']`).prop('selected', true);
 
         $("input[id='txtCP']").val(cliente.CliCodPost);
         $("input[id='txtRFC']").val(cliente.CliRFC);
@@ -815,7 +922,6 @@
         $("input[id='txtTelefono2']").val(cliente.Telefono2);
         $("input[id='txtURL']").val(cliente.URL);
         $("input[id='txtFAX']").val(cliente.FAX);
-
         //#endregion
 
         //#region Otros datos
@@ -828,9 +934,9 @@
         $("input[id='txtCliAcumTransAñoD']").val(cliente.CliAcumTransAñoD);
         $("input[id='txtCliAcumPesos']").val(cliente.CliAcumPesos);
         $("input[id='txtCliAcumDolar']").val(cliente.CliAcumDolar);
-        $("input[id='txtCliPagaPesos']").val(CliPagaPesos);
-        $("input[id='txtCliPagaDolar']").val(CliPagaDolar);
-        $("input[id='txtCliTotTrans']").val(CliTotTrans);
+        $("input[id='txtCliPagaPesos']").val(cliente.CliPagaPesos);
+        $("input[id='txtCliPagaDolar']").val(cliente.CliPagaDolar);
+        $("input[id='txtCliTotTrans']").val(cliente.CliTotTrans);
         //#endregion
 
         //#region Mas datos
@@ -839,13 +945,11 @@
         $("input[id='txtTabIDCtaAm']").val(cliente.TabIDCtaAm);
         $("input[id='txtTipPtoID']").val(cliente.TipPtoID);
         $("input[id='txtTipPtoID1']").val(cliente.TipPtoID1);
-        debugger;
-        cliente.CliRelAABCli === 'true' ? $('#chbCliRelAABCli').prop("checked", true) : $('#chbCliRelAABCli').prop("checked", false);
-        //var CliRelAABCli = $("#chbCliRelAABCli").attr("checked") ? 1 : 0;
-        var CliRelAAPro = $("#chbCliRelAABPro").attr("checked") ? 1 : 0;
-        var CliRelAABPag = $("#chbCliRelAABPag").attr("checked") ? 1 : 0;
-        var CliRelAABDes = $("#chbCliRelAABDes").attr("checked") ? 1 : 0;
-        var CliManejosEsp = $("#chbCliManejosEsp").attr("checked") ? 1 : 0;
+        cliente.CliRelAABCli === true ? $('#chbCliRelAABCli').prop("checked", true) : $('#chbCliRelAABCli').prop("checked", false);
+        cliente.CliRelAAPro === true ? $('#chbCliRelAABPro').prop("checked", true) : $('#chbCliRelAABPro').prop("checked", false);
+        cliente.CliRelAABPag === true ? $('#chbCliRelAABPag').prop("checked", true) : $('#chbCliRelAABPag').prop("checked", false);
+        cliente.CliRelAABDes === true ? $('#chbCliRelAABDes').prop("checked", true) : $('#chbCliRelAABDes').prop("checked", false);
+        cliente.CliManejosEsp === true ? $('#chbCliManejosEsp').prop("checked", true) : $('#chbCliManejosEsp').prop("checked", false);
         $("input[id='txtCliFactA']").val().trim();
         $("input[id='txtCliViaMensajes']").val().trim();
         $("input[id='txtCliFacDescuento']").val().trim();
@@ -854,10 +958,10 @@
         $("input[id='txtCliFactHonorariosImp']").val().trim();
         $("input[id='txtRegOrigId']").val().trim();
         $("input[id='txtMetValID']").val().trim();
-        var CliPITEX = $("#chbCliPITEX").attr("checked") ? 1 : 0;
-        var CliMaquiladora = $("#chbCliMaquiladora").attr("checked") ? 1 : 0;
-        var CliEnvaMatriz = $("#chbCliEnvaMatriz").attr("checked") ? 1 : 0;
-        var CliRegla8a = $("#chbCliRegla8a").attr("checked") ? 1 : 0;
+        cliente.CliPITEX === true ? $('#chbCliPITEX').prop("checked", true) : $('#chbCliPITEX').prop("checked", false);
+        cliente.CliMaquiladora === true ? $('#chbCliMaquiladora').prop("checked", true) : $('#chbCliMaquiladora').prop("checked", false);
+        cliente.CliEnvaMatriz === true ? $('#chbCliEnvaMatriz').prop("checked", true) : $('#chbCliEnvaMatriz').prop("checked", false);
+        cliente.CliRegla8a === true ? $('#chbCliRegla8a').prop("checked", true) : $('#chbCliRegla8a').prop("checked", false);
         $("input[id='txtCliPasswordInternet']").val().trim();
         $("input[id='txtCliFraccionR8a']").val().trim();
         //#endregion
@@ -869,7 +973,7 @@
         $("input[id='txtImpAraID']").val().trim();
         $("input[id='txtIDProSec']").val().trim();
         $("input[id='txtNumClienteTFM']").val().trim();
-        var ActaConstitutiva = $("#chbActaConstitutiva").attr("checked") ? 1 : 0;
+        cliente.ActaConstitutiva === true ? $('#chbActaConstitutiva').prop("checked", true) : $('#chbActaConstitutiva').prop("checked", false);
         $("input[id='chbCIF']").val().trim();
         $("input[id='chbR1-SHCP']").val().trim();
         $("input[id='txtCURP']").val().trim();
@@ -882,9 +986,9 @@
         $("input[id='txtActualizo']").val().trim();
         $("input[id='txtFHActualizo']").val().trim();
         $("input[id='txtNombreCorto']").val().trim();
-        var ActivarPS = $("#chbActivarPS").attr("checked") ? 1 : 0;
-        var ActivarR8va = $("#chbActivarR8va").attr("checked") ? 1 : 0;
-        var CliActivo = $("#chbCliActivo").attr("checked") ? 1 : 0;
+        cliente.chbActivarPS === true ? $('#chbActivarPS').prop("checked", true) : $('#chbActivarPS').prop("checked", false);
+        cliente.ActivarR8va === true ? $('#chbActivarR8va').prop("checked", true) : $('#chbActivarR8va').prop("checked", false);
+        cliente.CliActivo === true ? $('#chbCliActivo').prop("checked", true) : $('#chbCliActivo').prop("checked", false);
         //#endregion
 
     </script>
