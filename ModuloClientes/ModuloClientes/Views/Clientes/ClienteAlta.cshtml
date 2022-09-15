@@ -16,31 +16,31 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" id="txtNombre" placeholder="Nombre Empresa SA de CV" class="form-control" />
+                        <label for="NOMBRE">Nombre:</label>
+                        <input type="text" id="NOMBRE" placeholder="Nombre Empresa SA de CV" class="form-control" />
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtDireccion">Direccion:</label>
-                            <input type="text" id="txtDireccion" placeholder="Calle Nombre" class="form-control" />
+                            <label for="DIRECCION">Direccion:</label>
+                            <input type="text" id="DIRECCION" placeholder="Calle Nombre" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtNumInt">Número Interior:</label>
-                            <input type="text" id="txtNumInt" placeholder="Local A" class="form-control" />
+                            <label for="ClieNumInt">Número Interior:</label>
+                            <input type="text" id="ClieNumInt" placeholder="Local A" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtNumInt">Número Exterior:</label>
-                            <input type="text" id="txtNumExt" placeholder="4556" class="form-control" />
+                            <label for="ClieNumInt">Número Exterior:</label>
+                            <input type="text" id="ClieNumExt" placeholder="4556" class="form-control" />
                         </div>
                         <div class="col form-group">
                             <label>CliColonia</label>
-                            <input type="text" id="txtCliColonia" value="" class="form-control" />
+                            <input type="text" id="CliColonia" value="" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="ddlPais">País:</label>
-                            <select id="ddlPais" class="form-control">
+                            <label for="PaisID">País:</label>
+                            <select id="PaisID" class="form-control">
                                 <option value="">Seleccionar</option>
                                 @foreach (Paises item in ViewBag.lpai)
                                 {
@@ -49,8 +49,8 @@
                             </select>
                         </div>
                         <div class="col form-group">
-                            <label for="ddlEstado">Estado:</label>
-                            <select id="ddlEstado" class="form-control">
+                            <label for="EstID">Estado:</label>
+                            <select id="EstID" class="form-control">
                                 <option value="">Seleccionar</option>
                                 @foreach (Estados item in ViewBag.lest)
                                 {
@@ -59,66 +59,66 @@
                             </select>
                         </div>
                         <div class="col form-group">
-                            <label for="ddlCiudad">Ciudad:</label>
-                            <input type="text" id="txtCiudad" placeholder="Ciudad Nombre" class="form-control" />
+                            <label for="CIUDAD">Ciudad:</label>
+                            <input type="text" id="CIUDAD" placeholder="Ciudad Nombre" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtCP">CP:</label>
-                            <input type="text" id="txtCP" placeholder="00000" class="form-control" />
+                            <label for="CliCodPost">CP:</label>
+                            <input type="text" id="CliCodPost" placeholder="00000" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtRFC">RFC:</label>
-                            <input type="text" id="txtRFC" placeholder="XAXX010101000" class="form-control" />
+                            <label for="CliRFC">RFC:</label>
+                            <input type="text" id="CliRFC" placeholder="XAXX010101000" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtNSS">SSN:</label>
-                            <input type="text" id="txtSSN" placeholder="00000000000" class="form-control" />
+                            <label for="CliSSN">SSN:</label>
+                            <input type="text" id="CliSSN" placeholder="00000000000" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtIRS">IRS:</label>
-                            <input type="text" id="txtIRS" class="form-control" />
+                            <label for="CliIRS">IRS:</label>
+                            <input type="text" id="CliIRS" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtCURP">CURP</label>
-                            <input type="text" id="txtCURP" value="" class="form-control" />
+                            <label for="CURP">CURP</label>
+                            <input type="text" id="CURP" value="" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtTelefono">Teléfono:</label>
+                            <label for="TELEFONO">Teléfono:</label>
                             <div class="input-group">
-                                <input type="text" id="txtTelefono" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
+                                <input type="text" id="TELEFONO" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                             </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtTelefono2">Teléfono 2:</label>
+                            <label for="Telefono2">Teléfono 2:</label>
                             <div class="input-group">
-                                <input type="text" id="txtTelefono2" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
+                                <input type="text" id="Telefono2" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                             </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtURL">URL:</label>
-                            <input type="text" id="txtURL" placeholder="www.midomino.com" class="form-control" />
+                            <label for="URL">URL:</label>
+                            <input type="text" id="URL" placeholder="www.midomino.com" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtFAX">FAX:</label>
-                            <input type="text" id="txtFAX" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
+                            <label for="FAX">FAX:</label>
+                            <input type="text" id="FAX" placeholder="(___) ___-____" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtAgrupCliCtaMex">AgrupCliCtaMex</label>
-                            <input type="text" id="txtAgrupCliCtaMex" value="" class="form-control" />
+                            <label for="AgrupCliCtaMex">AgrupCliCtaMex</label>
+                            <input type="text" id="AgrupCliCtaMex" value="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtAgrupCliCtaAm">AgrupCliCtaAm</label>
-                            <input type="text" id="txtAgrupCliCtaAm" value="" class="form-control" />
+                            <label for="AgrupCliCtaAm">AgrupCliCtaAm</label>
+                            <input type="text" id="AgrupCliCtaAm" value="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtAltaPor">AltaPor</label>
-                            <input type="text" id="txtAltaPor" value="" class="form-control" />
+                            <label for="AltaPor">AltaPor</label>
+                            <input type="text" id="AltaPor" value="" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -140,58 +140,58 @@
                 <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
-                            <label for="lblCliDesde">Cliente desde:</label>
-                            <input type="text" id="txtCliDesde" class="datep form-control" />
+                            <label for="CliDesde">Cliente desde:</label>
+                            <input type="text" id="CliDesde" class="datep form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliManejosEx">CliManejosEx:</label>
-                            <input type="text" id="txtCliManejosEx" placeholder="0" class="number form-control" />
+                            <label for="CliManejosEx">CliManejosEx:</label>
+                            <input type="text" id="CliManejosEx" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliServCompEx">CliServCompEx:</label>
-                            <input type="text" id="txtCliServCompEx" placeholder="0" class="number form-control" />
+                            <label for="CliServCompEx">CliServCompEx:</label>
+                            <input type="text" id="CliServCompEx" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliServCompIm">CliServCompIm:</label>
-                            <input type="text" id="txtCliServCompIm" placeholder="0" class="number form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col form-group">
-                            <label>CliHandlingIm:</label>
-                            <input type="text" id="txtCliHandlingIm" placeholder="0" class="form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label>CliAcumTransAñoP:</label>
-                            <input type="text" id="txtCliAcumTransAñoP" placeholder="0" class="number form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label>CliAcumTransAñoD:</label>
-                            <input type="text" id="txtCliAcumTransAñoD" placeholder="0" class="number form-control" />
+                            <label for="CliServCompIm">CliServCompIm:</label>
+                            <input type="text" id="CliServCompIm" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label>CliAcumPesos</label>
-                            <input type="text" id="txtCliAcumPesos" placeholder="$ 0.00" class="money form-control text-right" />
+                            <label for="CliHandlingIm">CliHandlingIm:</label>
+                            <input type="text" id="CliHandlingIm" placeholder="0" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>CliAcumDolar</label>
-                            <input type="text" id="txtCliAcumDolar" placeholder="$ 0.00" class="money form-control text-right" />
+                            <label for="CliAcumTransAñoP">CliAcumTransAñoP:</label>
+                            <input type="text" id="CliAcumTransAñoP" placeholder="0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>CliPagaPesos</label>
-                            <input type="text" id="txtCliPagaPesos" placeholder="$ 0.00" class="money form-control text-right" />
+                            <label for="CliAcumTransAñoD">CliAcumTransAñoD:</label>
+                            <input type="text" id="CliAcumTransAñoD" placeholder="0" class="number form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="CliAcumPesos">CliAcumPesos:</label>
+                            <input type="text" id="CliAcumPesos" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                         <div class="col form-group">
-                            <label>CliPagaDolar</label>
-                            <input type="text" id="txtCliPagaDolar" placeholder="$ 0.00" class="money form-control text-right" />
+                            <label for="CliAcumDolar">CliAcumDolar:</label>
+                            <input type="text" id="CliAcumDolar" placeholder="$ 0.00" class="money form-control text-right" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="CliPagaPesos">CliPagaPesos:</label>
+                            <input type="text" id="CliPagaPesos" placeholder="$ 0.00" class="money form-control text-right" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="CliPagaDolar">CliPagaDolar:</label>
+                            <input type="text" id="CliPagaDolar" placeholder="$ 0.00" class="money form-control text-right" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <label>CliTotTrans</label>
-                            <input type="number" id="txtCliTotTrans" placeholder="0" class="number form-control" />
+                            <label for="CliTotTrans">CliTotTrans:</label>
+                            <input type="number" id="CliTotTrans" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                 </div>
@@ -214,74 +214,74 @@
                 <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
-                            <label>TabID</label>
-                            <input type="number" id="txtTabID" placeholder="0.00" class="number form-control" />
+                            <label for="TabID">TabID:</label>
+                            <input type="number" id="TabID" placeholder="0.00" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>TabIDImp</label>
-                            <input type="number" id="txtTabIDImp" placeholder="0.00" class="number form-control" />
+                            <label for="TabIDImp">TabIDImp:</label>
+                            <input type="number" id="TabIDImp" placeholder="0.00" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>TabIDCtaAm</label>
-                            <input type="number" id="txtTabIDCtaAm" placeholder="0.00" class="number form-control" />
+                            <label for="TabIDCtaAm">TabIDCtaAm:</label>
+                            <input type="number" id="TabIDCtaAm" placeholder="0.00" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label>TipPtoID</label>
-                            <input type="text" id="txtTipPtoID" placeholder="" class="form-control" />
+                            <label for="TipPtoID">TipPtoID:</label>
+                            <input type="text" id="TipPtoID" placeholder="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>TipPtoID1</label>
-                            <input type="text" id="txtTipPtoID1" placeholder="" class="form-control" />
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliRelAABCli" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliRelAABCli">CliRelAABCli</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliRelAABPro" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliRelAABPro">CliRelAABPro</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliRelAABPag" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliRelAABPag">CliRelAABPag</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliRelAABDes" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliRelAABDes">CliRelAABDes</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliManejosEsp" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliManejosEsp">CliManejosEsp</label>
-                            </div>
+                            <label for="TipPtoID1">TipPtoID1:</label>
+                            <input type="text" id="TipPtoID1" placeholder="" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtCliFactA">CliFactA:</label>
-                            <input type="text" id="txtCliFactA" placeholder="" class="form-control" />
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliRelAABCli" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliRelAABCli">CliRelAABCli</label>
+                            </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliViaMensajes">CliViaMensajes:</label>
-                            <input type="text" id="txtCliViaMensajes" placeholder="0" class="number form-control" />
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliRelAABPro" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliRelAABPro">CliRelAABPro</label>
+                            </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliFacDescuento">CliFacDescuento:</label>
-                            <input type="number" id="txtCliFacDescuento" placeholder="0.0" class="number form-control" />
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliRelAABPag" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliRelAABPag">CliRelAABPag</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliRelAABDes" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliRelAABDes">CliRelAABDes</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliManejosEsp" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliManejosEsp">CliManejosEsp</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="CliFactA">CliFactA:</label>
+                            <input type="text" id="CliFactA" placeholder="" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="CliViaMensajes">CliViaMensajes:</label>
+                            <input type="text" id="CliViaMensajes" placeholder="0" class="number form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="CliFacDescuento">CliFacDescuento:</label>
+                            <input type="number" id="CliFacDescuento" placeholder="0.0" class="number form-control" />
                         </div>
 
                     </div>
@@ -304,58 +304,58 @@
                 <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
-                            <label>CliFactHonorarios:</label>
-                            <input type="number" id="txtCliFactHonorarios" placeholder="0.0" class="number form-control" />
+                            <label for="CliFactHonorarios">CliFactHonorarios:</label>
+                            <input type="number" id="CliFactHonorarios" placeholder="0.0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>CliFactHonorariosImp:</label>
-                            <input type="number" id="txtCliFactHonorariosImp" placeholder="0.0" class="number form-control" />
+                            <label for="CliFactHonorariosImp">CliFactHonorariosImp:</label>
+                            <input type="number" id="CliFactHonorariosImp" placeholder="0.0" class="number form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtRegOrigId">RegOrigId</label>
-                            <input type="text" id="txtRegOrigId" placeholder="" class="form-control" />
+                            <label for="RegOrigId">RegOrigId:</label>
+                            <input type="text" id="RegOrigId" placeholder="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label>MetValID</label>
-                            <input type="text" id="txtMetValID" placeholder="" class="form-control" />
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliPITEX" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliPITEX">CliPITEX</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliMaquiladora" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliMaquiladora">CliMaquiladora</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliEnvaMatriz" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliEnvaMatriz">CliEnvaMatriz</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliRegla8a" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliRegla8a">CliRegla8a</label>
-                            </div>
+                            <label for="MetValID">MetValID</label>
+                            <input type="text" id="MetValID" placeholder="" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtCliPasswordInternet">CliPasswordInternet</label>
-                            <input type="text" id="txtCliPasswordInternet" value="" class="form-control" />
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliPITEX" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliPITEX">CliPITEX</label>
+                            </div>
                         </div>
                         <div class="col form-group">
-                            <label for="txtCliFraccionR8a">CliFraccionR8a</label>
-                            <input type="text" id="txtCliFraccionR8a" value="" class="form-control" />
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliMaquiladora" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliMaquiladora">CliMaquiladora</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliEnvaMatriz" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliEnvaMatriz">CliEnvaMatriz</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliRegla8a" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliRegla8a">CliRegla8a</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="CliPasswordInternet">CliPasswordInternet</label>
+                            <input type="text" id="CliPasswordInternet" value="" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="CliFraccionR8a">CliFraccionR8a</label>
+                            <input type="text" id="CliFraccionR8a" value="" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -377,98 +377,98 @@
                 <div class="card-body collapse">
                     <div class="row">
                         <div class="col form-group">
-                            <label form="CliEsquina">CliEsquina</label>
-                            <input type="text" id="txtCliEsquina" value="" class="form-control" />
+                            <label form="CliEsquina">CliEsquina:</label>
+                            <input type="text" id="CliEsquina" value="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="CliSector">CliSector</label>
-                            <input type="number" id="txtCliSector" placeholder="0" class="number form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col form-group">
-                            <label>ImpAraID</label>
-                            <input type="text" id="txtImpAraID" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label>IDProSec</label>
-                            <input type="text" id="txtIDProSec" value="" class="form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label>NumClienteTFM</label>
-                            <input type="text" id="txtNumClienteTFM" value="" class="form-control" />
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbActaConstitutiva" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbActaConstitutiva">ActaConstitutiva</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCIF" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCIF">CIF</label>
-                            </div>
-                        </div>
-                        <div class="col form-group">
-                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbR1-SHCP" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbR1-SHCP">R1-SHCP</label>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col form-group">
-                            <label for="txtAgrupCliFede">AgrupCliFede</label>
-                            <input type="text" id="txtAgrupCliFede" value="" class="form-control" />
+                            <label for="CliSector">CliSector:</label>
+                            <input type="number" id="CliSector" placeholder="0" class="number form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <label for="txtFHAltaPor">FHAltaPor</label>
-                            <input type="text" id="txtFHAltaPor" value="" class="datep form-control" />
+                            <label for="ImpAraID">ImpAraID:</label>
+                            <input type="text" id="ImpAraID" value="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtActualizo">Actualizo</label>
-                            <input type="text" id="txtActualizo" value="" class="form-control" />
+                            <label for="IDProSec">IDProSec:</label>
+                            <input type="text" id="IDProSec" value="" class="form-control" />
                         </div>
                         <div class="col form-group">
-                            <label for="txtFHActualizo">FHActualizo</label>
-                            <input type="text" id="txtFHActualizo" value="" class="datep form-control" />
-                        </div>
-                        <div class="col form-group">
-                            <label for="txtNombreCorto">NombreCorto</label>
-                            <input type="text" id="txtNombreCorto" value="" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col form-group">
-                            <label for="txtCliObs">CliObs</label>
-                            <textarea id="txtCliObs" class="form-control" placeholder="Observaciones sobre el cliente"></textarea>
+                            <label for="NumClienteTFM">NumClienteTFM:</label>
+                            <input type="text" id="NumClienteTFM" value="" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col form-group">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbActivarPS" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbActivarPS">ActivarPS</label>
+                                <input type="checkbox" id="ActaConstitutiva" class="custom-control-input" />
+                                <label class="custom-control-label" for="ActaConstitutiva">ActaConstitutiva</label>
                             </div>
                         </div>
                         <div class="col form-group">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbActivarR8va" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbActivarR8va">ActivarR8va</label>
+                                <input type="checkbox" id="CIF" class="custom-control-input" />
+                                <label class="custom-control-label" for="CIF">CIF</label>
                             </div>
                         </div>
                         <div class="col form-group">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                <input type="checkbox" id="chbCliActivo" class="custom-control-input" />
-                                <label class="custom-control-label" for="chbCliActivo">CliActivo</label>
+                                <input type="checkbox" id="R1-SHCP" class="custom-control-input" />
+                                <label class="custom-control-label" for="R1-SHCP">R1-SHCP</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="AgrupCliFede">AgrupCliFede:</label>
+                            <input type="text" id="AgrupCliFede" value="" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="FHAltaPor">FHAltaPor:</label>
+                            <input type="text" id="FHAltaPor" value="" class="datep form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="Actualizo">Actualizo:</label>
+                            <input type="text" id="Actualizo" value="" class="form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="FHActualizo">FHActualizo:</label>
+                            <input type="text" id="FHActualizo" value="" class="datep form-control" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="NombreCorto">NombreCorto:</label>
+                            <input type="text" id="NombreCorto" value="" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="CliObs">CliObs</label>
+                            <textarea id="CliObs" class="form-control" placeholder="Observaciones sobre el cliente"></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="ActivarPS" class="custom-control-input" />
+                                <label class="custom-control-label" for="ActivarPS">ActivarPS</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="ActivarR8va" class="custom-control-input" />
+                                <label class="custom-control-label" for="ActivarR8va">ActivarR8va</label>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                <input type="checkbox" id="CliActivo" class="custom-control-input" />
+                                <label class="custom-control-label" for="CliActivo">CliActivo</label>
                             </div>
                         </div>
                     </div>
@@ -549,94 +549,94 @@
 
     $('#btnGuardaCli').click(function (e) {
         e.preventDefault();
-
+        debugger;
         //#region Datos generales
-        var Nombre = $("input[id='txtNombre']").val().trim();
-        var Direccion = $("input[id='txtDireccion']").val().trim();
-        var NumInt = $("input[id='txtNumInt']").val().trim();
-        var NumExt = $("input[id='txtNumExt']").val().trim();
-        var Ciudad = $("input[id='txtCiudad']").val().trim();
-        var Estado = $("#ddlEstado option:selected").val();
-        var Pais = $("#ddlPais option:selected").val();
-        var CP = $("input[id='txtCP']").val().trim();
-        var RFC = $("input[id='txtRFC']").val().trim();
-        var SSN = $("input[id='txtSSN']").val().trim();
-        var IRS = $("input[id='txtIRS']").val().trim();
-        var Telefono = $("input[id='txtTelefono']").val().trim();
-        var Telefono2 = $("input[id='txtTelefono2']").val().trim();
-        var URL = $("input[id='txtURL']").val().trim();
-        var FAX = $("input[id='txtFAX']").val().trim();
+        var Nombre = $("input[id='NOMBRE']").val().trim();
+        var Direccion = $("input[id='DIRECCION']").val().trim();
+        var NumInt = $("input[id='ClieNumInt']").val().trim();
+        var NumExt = $("input[id='ClieNumExt']").val().trim();
+        var Ciudad = $("input[id='CIUDAD']").val().trim();
+        var Estado = $("#EstID option:selected").val();
+        var Pais = $("#PaisID option:selected").val();
+        var CP = $("input[id='CliCodPost']").val().trim();
+        var RFC = $("input[id='CliRFC']").val().trim();
+        var SSN = $("input[id='CliSSN']").val().trim();
+        var IRS = $("input[id='CliIRS']").val().trim();
+        var Telefono = $("input[id='TELEFONO']").val().trim();
+        var Telefono2 = $("input[id='Telefono2']").val().trim();
+        var URL = $("input[id='URL']").val().trim();
+        var FAX = $("input[id='FAX']").val().trim();
         //#endregion
 
         //#region Otros datos
-        var CliDesde = $("input[id='txtCliDesde']").val().trim();
-        var CliManejosEx = $("input[id='txtCliManejosEx']").val().trim();
-        var CliServCompEx = $("input[id='txtCliServCompEx']").val().trim();
-        var CliServCompIm = $("input[id='txtCliServCompIm']").val().trim();
-        var CliHandlingIm = $("input[id='txtCliHandlingIm']").val().trim();
-        var CliAcumTransAñoP = $("input[id='txtCliAcumTransAñoP']").val().trim();
-        var CliAcumTransAñoD = $("input[id='txtCliAcumTransAñoD']").val().trim();
-        var acumpe = $("input[id='txtCliAcumPesos']").val();
+        var CliDesde = $("input[id='CliDesde']").val().trim();
+        var CliManejosEx = $("input[id='CliManejosEx']").val().trim();
+        var CliServCompEx = $("input[id='CliServCompEx']").val().trim();
+        var CliServCompIm = $("input[id='CliServCompIm']").val().trim();
+        var CliHandlingIm = $("input[id='CliHandlingIm']").val().trim();
+        var CliAcumTransAñoP = $("input[id='CliAcumTransAñoP']").val().trim();
+        var CliAcumTransAñoD = $("input[id='CliAcumTransAñoD']").val().trim();
+        var acumpe = $("input[id='CliAcumPesos']").val();
         var CliAcumPesos = Number(acumpe.replace(/[^0-9.-]+/g, ""));
-        var acumdo = $("input[id='txtCliAcumDolar']").val();
+        var acumdo = $("input[id='CliAcumDolar']").val();
         var CliAcumDolar = Number(acumdo.replace(/[^0-9.-]+/g, ""));
-        var pagape = $("input[id='txtCliPagaPesos']").val();
+        var pagape = $("input[id='CliPagaPesos']").val();
         var CliPagaPesos = Number(pagape.replace(/[^0-9.-]+/g, ""));
-        var pagado = $("input[id='txtCliPagaDolar']").val();
+        var pagado = $("input[id='CliPagaDolar']").val();
         var CliPagaDolar = Number(pagado.replace(/[^0-9.-]+/g, ""));
-        var CliTotTrans = $("input[id='txtCliTotTrans']").val().trim();
+        var CliTotTrans = $("input[id='CliTotTrans']").val().trim();
         //#endregion
 
         //#region Mas datos
-        var TabID = $("input[id='txtTabID']").val().trim();
-        var TabIDImp = $("input[id='txtTabIDImp']").val().trim();
-        var TabIDCtaAm = $("input[id='txtTabIDCtaAm']").val().trim();
-        var TipPtoID = $("input[id='txtTipPtoID']").val().trim();
-        var TipPtoID1 = $("input[id='txtTipPtoID1']").val().trim();
-        var CliRelAABCli = $("#chbCliRelAABCli").attr("checked") ? 1 : 0;
-        var CliRelAAPro = $("#chbCliRelAABPro").attr("checked") ? 1 : 0;
-        var CliRelAABPag = $("#chbCliRelAABPag").attr("checked") ? 1 : 0;
-        var CliRelAABDes = $("#chbCliRelAABDes").attr("checked") ? 1 : 0;
-        var CliManejosEsp = $("#chbCliManejosEsp").attr("checked") ? 1 : 0;
-        var CliFactA = $("input[id='txtCliFactA']").val().trim();
-        var CliViaMensajes = $("input[id='txtCliViaMensajes']").val().trim();
-        var CliFacDescuento = $("input[id='txtCliFacDescuento']").val().trim();
+        var TabID = $("input[id='TabID']").val().trim();
+        var TabIDImp = $("input[id='TabIDImp']").val().trim();
+        var TabIDCtaAm = $("input[id='TabIDCtaAm']").val().trim();
+        var TipPtoID = $("input[id='TipPtoID']").val().trim();
+        var TipPtoID1 = $("input[id='TipPtoID1']").val().trim();
+        var CliRelAABCli = $("#CliRelAABCli").attr("checked") ? 1 : 0;
+        var CliRelAAPro = $("#CliRelAABPro").attr("checked") ? 1 : 0;
+        var CliRelAABPag = $("#CliRelAABPag").attr("checked") ? 1 : 0;
+        var CliRelAABDes = $("#CliRelAABDes").attr("checked") ? 1 : 0;
+        var CliManejosEsp = $("#CliManejosEsp").attr("checked") ? 1 : 0;
+        var CliFactA = $("input[id='CliFactA']").val().trim();
+        var CliViaMensajes = $("input[id='CliViaMensajes']").val().trim();
+        var CliFacDescuento = $("input[id='CliFacDescuento']").val().trim();
 
-        var CliFactHonorarios = $("input[id='txtCliFactHonorarios']").val().trim();
-        var CliFactHonorariosImp = $("input[id='txtCliFactHonorariosImp']").val().trim();
-        var RegOrigId = $("input[id='txtRegOrigId']").val().trim();
-        var MetValID = $("input[id='txtMetValID']").val().trim();
-        var CliPITEX = $("#chbCliPITEX").attr("checked") ? 1 : 0;
-        var CliMaquiladora = $("#chbCliMaquiladora").attr("checked") ? 1 : 0;
-        var CliEnvaMatriz = $("#chbCliEnvaMatriz").attr("checked") ? 1 : 0;
-        var CliRegla8a = $("#chbCliRegla8a").attr("checked") ? 1 : 0;
-        var CliPasswordInternet = $("input[id='txtCliPasswordInternet']").val().trim();
-        var CliFraccionR8a = $("input[id='txtCliFraccionR8a']").val().trim();
+        var CliFactHonorarios = $("input[id='CliFactHonorarios']").val().trim();
+        var CliFactHonorariosImp = $("input[id='CliFactHonorariosImp']").val().trim();
+        var RegOrigId = $("input[id='RegOrigId']").val().trim();
+        var MetValID = $("input[id='MetValID']").val().trim();
+        var CliPITEX = $("#CliPITEX").attr("checked") ? 1 : 0;
+        var CliMaquiladora = $("#CliMaquiladora").attr("checked") ? 1 : 0;
+        var CliEnvaMatriz = $("#CliEnvaMatriz").attr("checked") ? 1 : 0;
+        var CliRegla8a = $("#CliRegla8a").attr("checked") ? 1 : 0;
+        var CliPasswordInternet = $("input[id='CliPasswordInternet']").val().trim();
+        var CliFraccionR8a = $("input[id='CliFraccionR8a']").val().trim();
         //#endregion
 
         //#region y mas datos
-        var CliColonia = $("input[id='txtCliColonia']").val().trim();
-        var CliEsquina = $("input[id='txtCliEsquina']").val().trim();
-        var CliSector = $("input[id='txtCliSector']").val().trim();
-        var ImpAraID = $("input[id='txtImpAraID']").val().trim();
-        var IDProSec = $("input[id='txtIDProSec']").val().trim();
-        var NumClienteTFM = $("input[id='txtNumClienteTFM']").val().trim();
-        var ActaConstitutiva = $("#chbActaConstitutiva").attr("checked") ? 1 : 0;
-        var CIF = $("input[id='chbCIF']").val().trim();
-        var R1SHCP = $("input[id='chbR1-SHCP']").val().trim();
-        var CURP = $("input[id='txtCURP']").val().trim();
-        var AgrupCliCtaMex = $("input[id='txtAgrupCliCtaMex']").val().trim();
-        var AgrupCliCtaAm = $("input[id='txtAgrupCliCtaAm']").val().trim();
-        var AgrupCliFede = $("input[id='txtAgrupCliFede']").val().trim();
-        var AltaPor = $("input[id='txtAltaPor']").val().trim();
-        var FHAltaPor = $("input[id='txtFHAltaPor']").val().trim();
-        var CliObs = $("#txtCliObs").val().trim();
-        var Actualizo = $("input[id='txtActualizo']").val().trim();
-        var FHActualizo = $("input[id='txtFHActualizo']").val().trim();
-        var NombreCorto = $("input[id='txtNombreCorto']").val().trim();
-        var ActivarPS = $("#chbActivarPS").attr("checked") ? 1 : 0;
-        var ActivarR8va = $("#chbActivarR8va").attr("checked") ? 1 : 0;
-        var CliActivo = $("#chbCliActivo").attr("checked") ? 1 : 0;
+        var CliColonia = $("input[id='CliColonia']").val().trim();
+        var CliEsquina = $("input[id='CliEsquina']").val().trim();
+        var CliSector = $("input[id='CliSector']").val().trim();
+        var ImpAraID = $("input[id='ImpAraID']").val().trim();
+        var IDProSec = $("input[id='IDProSec']").val().trim();
+        var NumClienteTFM = $("input[id='NumClienteTFM']").val().trim();
+        var ActaConstitutiva = $("#ActaConstitutiva").attr("checked") ? 1 : 0;
+        var CIF = $("input[id='CIF']").val().trim();
+        var R1SHCP = $("input[id='R1-SHCP']").val().trim();
+        var CURP = $("input[id='CURP']").val().trim();
+        var AgrupCliCtaMex = $("input[id='AgrupCliCtaMex']").val().trim();
+        var AgrupCliCtaAm = $("input[id='AgrupCliCtaAm']").val().trim();
+        var AgrupCliFede = $("input[id='AgrupCliFede']").val().trim();
+        var AltaPor = $("input[id='AltaPor']").val().trim();
+        var FHAltaPor = $("input[id='FHAltaPor']").val().trim();
+        var CliObs = $("#CliObs").val().trim();
+        var Actualizo = $("input[id='Actualizo']").val().trim();
+        var FHActualizo = $("input[id='FHActualizo']").val().trim();
+        var NombreCorto = $("input[id='NombreCorto']").val().trim();
+        var ActivarPS = $("#ActivarPS").attr("checked") ? 1 : 0;
+        var ActivarR8va = $("#ActivarR8va").attr("checked") ? 1 : 0;
+        var CliActivo = $("#CliActivo").attr("checked") ? 1 : 0;
         //#endregion
 
         const data = new FormData();
@@ -801,98 +801,102 @@
         var tipo = '@Session["tipo"]';
 
         // Limita a los usuarios de solo Lectura
-        if (tipo == 'L') {
-            // oculta div de otros datos
-            //$('#otrosdatos').hide();
+        if (tipo == 'O') {
 
-            //#region Datos generales
-            $("input[id='txtNombre']").prop('disabled', true);
-            $("input[id='txtNombre']").prop('disabled', true);
-            $("input[id='txtDireccion']").prop('disabled', true);
-            $("input[id='txtNumInt']").prop('disabled', true);
-            $("input[id='txtNumExt']").prop('disabled', true);
-            $("input[id='txtCiudad']").prop('disabled', true);
-            $("#ddlEstado").prop('disabled', 'disabled');
-            $("#ddlPais").prop('disabled', 'disabled');
-            $("input[id='txtCP']").prop('disabled', true);
-            $("input[id='txtRFC']").prop('disabled', true);
-            $("input[id='txtSSN']").prop('disabled', true);
-            $("input[id='txtIRS']").prop('disabled', true);
-            $("input[id='txtTelefono']").prop('disabled', true);
-            $("input[id='txtTelefono2']").prop('disabled', true);
-            $("input[id='txtURL']").prop('disabled', true);
-            $("input[id='txtFAX']").prop('disabled', true);
+            $(".form-control").prop('disabled', true);
+            $(".custom-control-input").prop('disabled', true);
+            $("#btnGuardaCli").prop('disabled', true);
+
+            //#region comentarios
+            ////#region Datos generales
+            //$("input[id='txtNombre']").prop('disabled', true);
+            //$("input[id='txtNombre']").prop('disabled', true);
+            //$("input[id='txtDireccion']").prop('disabled', true);
+            //$("input[id='txtNumInt']").prop('disabled', true);
+            //$("input[id='txtNumExt']").prop('disabled', true);
+            //$("input[id='txtCiudad']").prop('disabled', true);
+            //$("#ddlEstado").prop('disabled', 'disabled');
+            //$("#ddlPais").prop('disabled', 'disabled');
+            //$("input[id='txtCP']").prop('disabled', true);
+            //$("input[id='txtRFC']").prop('disabled', true);
+            //$("input[id='txtSSN']").prop('disabled', true);
+            //$("input[id='txtIRS']").prop('disabled', true);
+            //$("input[id='txtTelefono']").prop('disabled', true);
+            //$("input[id='txtTelefono2']").prop('disabled', true);
+            //$("input[id='txtURL']").prop('disabled', true);
+            //$("input[id='txtFAX']").prop('disabled', true);
+            ////#endregion
+
+            ////#region Otros datos
+            //$("input[id='txtCliDesde']").prop('disabled', true);
+            //$("input[id='txtCliManejosEx']").prop('disabled', true);
+            //$("input[id='txtCliServCompEx']").prop('disabled', true);
+            //$("input[id='txtCliServCompIm']").prop('disabled', true);
+            //$("input[id='txtCliHandlingIm']").prop('disabled', true);
+            //$("input[id='txtCliAcumTransAñoP']").prop('disabled', true);
+            //$("input[id='txtCliAcumTransAñoD']").prop('disabled', true);
+            //$("input[id='txtCliAcumPesos']").prop('disabled', true);
+            //$("input[id='txtCliAcumDolar']").prop('disabled', true);
+            //$("input[id='txtCliPagaPesos']").prop('disabled', true);
+            //$("input[id='txtCliPagaDolar']").prop('disabled', true);
+            //$("input[id='txtCliTotTrans']").prop('disabled', true);
+            ////#endregion
+
+            ////#region Mas datos
+            //$("input[id='txtTabID']").prop('disabled', true);
+            //$("input[id='txtTabIDImp']").prop('disabled', true);
+            //$("input[id='txtTabIDCtaAm']").prop('disabled', true);
+            //$("input[id='txtTipPtoID']").prop('disabled', true);
+            //$("input[id='txtTipPtoID1']").prop('disabled', true);
+            //$("#chbCliRelAABCli").prop('disabled', true);
+            //$("#chbCliRelAABPro").prop('disabled', true);
+            //$("#chbCliRelAABPag").prop('disabled', true);
+            //$("#chbCliRelAABDes").prop('disabled', true);
+            //$("#chbCliManejosEsp").prop('disabled', true);
+            //$("input[id='txtCliFactA']").prop('disabled', true);
+            //$("input[id='txtCliViaMensajes']").prop('disabled', true);
+            //$("input[id='txtCliFacDescuento']").prop('disabled', true);
+
+            //$("input[id='txtCliFactHonorarios']").prop('disabled', true);
+            //$("input[id='txtCliFactHonorariosImp']").prop('disabled', true);
+            //$("input[id='txtRegOrigId']").prop('disabled', true);
+            //$("input[id='txtMetValID']").prop('disabled', true);
+            //$("#chbCliPITEX").prop('disabled', true);
+            //$("#chbCliMaquiladora").prop('disabled', true);
+            //$("#chbCliEnvaMatriz").prop('disabled', true);
+            //$("#chbCliRegla8a").prop('disabled', true);
+            //$("input[id='txtCliPasswordInternet']").prop('disabled', true);
+            //$("input[id='txtCliFraccionR8a']").prop('disabled', true);
+            ////#endregion
+
+            ////#region y mas datos
+            //$("input[id='txtCliColonia']").prop('disabled', true);
+            //$("input[id='txtCliEsquina']").prop('disabled', true);
+            //$("input[id='txtCliSector']").prop('disabled', true);
+            //$("input[id='txtImpAraID']").prop('disabled', true);
+            //$("input[id='txtIDProSec']").prop('disabled', true);
+            //$("input[id='txtNumClienteTFM']").prop('disabled', true);
+            //$("#chbActaConstitutiva").prop('disabled', true);
+            //$("input[id='chbCIF']").prop('disabled', true);
+            //$("input[id='chbR1-SHCP']").prop('disabled', true);
+            //$("input[id='txtCURP']").prop('disabled', true);
+            //$("input[id='txtAgrupCliCtaMex']").prop('disabled', true);
+            //$("input[id='txtAgrupCliCtaAm']").prop('disabled', true);
+            //$("input[id='txtAgrupCliFede']").prop('disabled', true);
+            //$("input[id='txtAltaPor']").prop('disabled', true);
+            //$("input[id='txtFHAltaPor']").prop('disabled', true);
+            //$("#txtCliObs").prop('disabled', true);
+            //$("input[id='txtActualizo']").prop('disabled', true);
+            //$("input[id='txtFHActualizo']").prop('disabled', true);
+            //$("input[id='txtNombreCorto']").prop('disabled', true);
+            //$("#chbActivarPS").prop('disabled', true);
+            //$("#chbActivarR8va").prop('disabled', true);
+            //$("input[id='chbCliActivo']").prop('disabled', true);
+            ////#endregion
             //#endregion
-
-            //#region Otros datos
-            $("input[id='txtCliDesde']").prop('disabled', true);
-            $("input[id='txtCliManejosEx']").prop('disabled', true);
-            $("input[id='txtCliServCompEx']").prop('disabled', true);
-            $("input[id='txtCliServCompIm']").prop('disabled', true);
-            $("input[id='txtCliHandlingIm']").prop('disabled', true);
-            $("input[id='txtCliAcumTransAñoP']").prop('disabled', true);
-            $("input[id='txtCliAcumTransAñoD']").prop('disabled', true);
-            $("input[id='txtCliAcumPesos']").prop('disabled', true);
-            $("input[id='txtCliAcumDolar']").prop('disabled', true);
-            $("input[id='txtCliPagaPesos']").prop('disabled', true);
-            $("input[id='txtCliPagaDolar']").prop('disabled', true);
-            $("input[id='txtCliTotTrans']").prop('disabled', true);
-            //#endregion
-
-            //#region Mas datos
-            $("input[id='txtTabID']").prop('disabled', true);
-            $("input[id='txtTabIDImp']").prop('disabled', true);
-            $("input[id='txtTabIDCtaAm']").prop('disabled', true);
-            $("input[id='txtTipPtoID']").prop('disabled', true);
-            $("input[id='txtTipPtoID1']").prop('disabled', true);
-            $("#chbCliRelAABCli").prop('disabled', true);
-            $("#chbCliRelAABPro").prop('disabled', true);
-            $("#chbCliRelAABPag").prop('disabled', true);
-            $("#chbCliRelAABDes").prop('disabled', true);
-            $("#chbCliManejosEsp").prop('disabled', true);
-            $("input[id='txtCliFactA']").prop('disabled', true);
-            $("input[id='txtCliViaMensajes']").prop('disabled', true);
-            $("input[id='txtCliFacDescuento']").prop('disabled', true);
-
-            $("input[id='txtCliFactHonorarios']").prop('disabled', true);
-            $("input[id='txtCliFactHonorariosImp']").prop('disabled', true);
-            $("input[id='txtRegOrigId']").prop('disabled', true);
-            $("input[id='txtMetValID']").prop('disabled', true);
-            $("#chbCliPITEX").prop('disabled', true);
-            $("#chbCliMaquiladora").prop('disabled', true);
-            $("#chbCliEnvaMatriz").prop('disabled', true);
-            $("#chbCliRegla8a").prop('disabled', true);
-            $("input[id='txtCliPasswordInternet']").prop('disabled', true);
-            $("input[id='txtCliFraccionR8a']").prop('disabled', true);
-            //#endregion
-
-            //#region y mas datos
-            $("input[id='txtCliColonia']").prop('disabled', true);
-            $("input[id='txtCliEsquina']").prop('disabled', true);
-            $("input[id='txtCliSector']").prop('disabled', true);
-            $("input[id='txtImpAraID']").prop('disabled', true);
-            $("input[id='txtIDProSec']").prop('disabled', true);
-            $("input[id='txtNumClienteTFM']").prop('disabled', true);
-            $("#chbActaConstitutiva").prop('disabled', true);
-            $("input[id='chbCIF']").prop('disabled', true);
-            $("input[id='chbR1-SHCP']").prop('disabled', true);
-            $("input[id='txtCURP']").prop('disabled', true);
-            $("input[id='txtAgrupCliCtaMex']").prop('disabled', true);
-            $("input[id='txtAgrupCliCtaAm']").prop('disabled', true);
-            $("input[id='txtAgrupCliFede']").prop('disabled', true);
-            $("input[id='txtAltaPor']").prop('disabled', true);
-            $("input[id='txtFHAltaPor']").prop('disabled', true);
-            $("#txtCliObs").prop('disabled', true);
-            $("input[id='txtActualizo']").prop('disabled', true);
-            $("input[id='txtFHActualizo']").prop('disabled', true);
-            $("input[id='txtNombreCorto']").prop('disabled', true);
-            $("#chbActivarPS").prop('disabled', true);
-            $("#chbActivarR8va").prop('disabled', true);
-            $("input[id='chbCliActivo']").prop('disabled', true);
-        //#endregion
         }
 
-        //aqui hay que traer un la informacion del xml con los datos del cliente
+        //aqui hay que traer la informacion del xml con los datos del cliente
         tippy('#txtNombre', {
             content: 'Info del Cliente',
             animation: 'shift-away',
@@ -902,95 +906,131 @@
         });
 
         var cliente = @Html.Raw(Json.Encode(ViewBag.cliente));
+        debugger;
+        // recorre objeto e imprime el nombre de la propiedad y su valor
+        Object.keys(cliente).forEach(k => {
+            console.log(k, cliente[k]);
 
-        //#region Datos generales
-        $('#idCliente').val(cliente.CLIENTE);
-        $("input[id='txtNombre']").val(cliente.NOMBRE);
-        $("input[id='txtDireccion']").val(cliente.DIRECCION);
-        $("input[id='txtNumInt']").val(cliente.ClieNumInt);
-        $("input[id='txtNumExt']").val(cliente.ClieNumExt);
-        $("input[id='txtCiudad']").val(cliente.CIUDAD);
+            switch (k) {
+                case 'PaisID':
+                case 'EstID':
+                    $(`#` + k + ` option[value='${cliente[k]}']`).prop('selected', true);
+                    break;
 
-        $(`#ddlPais option[value='${cliente.PaisID}']`).prop('selected', true);
-        $(`#ddlEstado option[value='${cliente.EstID}']`).prop('selected', true);
+                case 'CliRelAABCli':
+                case 'CliRelAAPro':
+                case 'CliRelAABPag':
+                case 'CliRelAABDes':
+                case 'CliManejosEsp':
+                case 'CliPITEX':
+                case 'CliMaquiladora':
+                case 'CliEnvaMatriz':
+                case 'CliRegla8a':
+                case 'ActaConstitutiva':
+                case 'ActivarPS':
+                case 'ActivarR8va':
+                case 'CliActivo':
+                    cliente[k] === true ? $('#' + k + '').prop("checked", true) : $('#' + k + '').prop("checked", false);
+                    break;
 
-        $("input[id='txtCP']").val(cliente.CliCodPost);
-        $("input[id='txtRFC']").val(cliente.CliRFC);
-        $("input[id='txtSSN']").val(cliente.CliSSN);
-        $("input[id='txtIRS']").val(cliente.CliIRS);
-        $("input[id='txtTelefono']").val(cliente.TELEFONO);
-        $("input[id='txtTelefono2']").val(cliente.Telefono2);
-        $("input[id='txtURL']").val(cliente.URL);
-        $("input[id='txtFAX']").val(cliente.FAX);
+                case 'CLIENTE':
+                    break;
+
+                default:
+                    $("input[id='" + k + "']").val(cliente[k]);
+                    break;
+            }
+        });
+
+        //#region Código anterior
+        ////#region Datos generales
+        //$('#idCliente').val(cliente.CLIENTE);
+        //$("input[id='txtNombre']").val(cliente.NOMBRE);
+        //$("input[id='txtDireccion']").val(cliente.DIRECCION);
+        //$("input[id='txtNumInt']").val(cliente.ClieNumInt);
+        //$("input[id='txtNumExt']").val(cliente.ClieNumExt);
+        //$("input[id='txtCiudad']").val(cliente.CIUDAD);
+
+        //$(`#ddlPais option[value='${cliente.PaisID}']`).prop('selected', true);
+        //$(`#ddlEstado option[value='${cliente.EstID}']`).prop('selected', true);
+
+        //$("input[id='txtCP']").val(cliente.CliCodPost);
+        //$("input[id='txtRFC']").val(cliente.CliRFC);
+        //$("input[id='txtSSN']").val(cliente.CliSSN);
+        //$("input[id='txtIRS']").val(cliente.CliIRS);
+        //$("input[id='txtTelefono']").val(cliente.TELEFONO);
+        //$("input[id='txtTelefono2']").val(cliente.Telefono2);
+        //$("input[id='txtURL']").val(cliente.URL);
+        //$("input[id='txtFAX']").val(cliente.FAX);
+        ////#endregion
+
+        ////#region Otros datos
+        //$("input[id='txtCliDesde']").val(cliente.CliDesde);
+        //$("input[id='txtCliManejosEx']").val(cliente.CliManejosEx);
+        //$("input[id='txtCliServCompEx']").val(cliente.CliServCompEx);
+        //$("input[id='txtCliServCompIm']").val(cliente.CliServCompIm);
+        //$("input[id='txtCliHandlingIm']").val(cliente.CliHandlingIm);
+        //$("input[id='txtCliAcumTransAñoP']").val(cliente.CliAcumTransAñoP);
+        //$("input[id='txtCliAcumTransAñoD']").val(cliente.CliAcumTransAñoD);
+        //$("input[id='txtCliAcumPesos']").val(cliente.CliAcumPesos);
+        //$("input[id='txtCliAcumDolar']").val(cliente.CliAcumDolar);
+        //$("input[id='txtCliPagaPesos']").val(cliente.CliPagaPesos);
+        //$("input[id='txtCliPagaDolar']").val(cliente.CliPagaDolar);
+        //$("input[id='txtCliTotTrans']").val(cliente.CliTotTrans);
+        ////#endregion
+
+        ////#region Mas datos
+        //$("input[id='txtTabID']").val(cliente.TabID);
+        //$("input[id='txtTabIDImp']").val(cliente.TabIDImp);
+        //$("input[id='txtTabIDCtaAm']").val(cliente.TabIDCtaAm);
+        //$("input[id='txtTipPtoID']").val(cliente.TipPtoID);
+        //$("input[id='txtTipPtoID1']").val(cliente.TipPtoID1);
+        //cliente.CliRelAABCli === true ? $('#chbCliRelAABCli').prop("checked", true) : $('#chbCliRelAABCli').prop("checked", false);
+        //cliente.CliRelAAPro === true ? $('#chbCliRelAABPro').prop("checked", true) : $('#chbCliRelAABPro').prop("checked", false);
+        //cliente.CliRelAABPag === true ? $('#chbCliRelAABPag').prop("checked", true) : $('#chbCliRelAABPag').prop("checked", false);
+        //cliente.CliRelAABDes === true ? $('#chbCliRelAABDes').prop("checked", true) : $('#chbCliRelAABDes').prop("checked", false);
+        //cliente.CliManejosEsp === true ? $('#chbCliManejosEsp').prop("checked", true) : $('#chbCliManejosEsp').prop("checked", false);
+        //$("input[id='txtCliFactA']").val().trim();
+        //$("input[id='txtCliViaMensajes']").val().trim();
+        //$("input[id='txtCliFacDescuento']").val().trim();
+
+        //$("input[id='txtCliFactHonorarios']").val().trim();
+        //$("input[id='txtCliFactHonorariosImp']").val().trim();
+        //$("input[id='txtRegOrigId']").val().trim();
+        //$("input[id='txtMetValID']").val().trim();
+        //cliente.CliPITEX === true ? $('#chbCliPITEX').prop("checked", true) : $('#chbCliPITEX').prop("checked", false);
+        //cliente.CliMaquiladora === true ? $('#chbCliMaquiladora').prop("checked", true) : $('#chbCliMaquiladora').prop("checked", false);
+        //cliente.CliEnvaMatriz === true ? $('#chbCliEnvaMatriz').prop("checked", true) : $('#chbCliEnvaMatriz').prop("checked", false);
+        //cliente.CliRegla8a === true ? $('#chbCliRegla8a').prop("checked", true) : $('#chbCliRegla8a').prop("checked", false);
+        //$("input[id='txtCliPasswordInternet']").val().trim();
+        //$("input[id='txtCliFraccionR8a']").val().trim();
+        ////#endregion
+
+        ////#region y mas datos
+        //$("input[id='txtCliColonia']").val().trim();
+        //$("input[id='txtCliEsquina']").val().trim();
+        //$("input[id='txtCliSector']").val().trim();
+        //$("input[id='txtImpAraID']").val().trim();
+        //$("input[id='txtIDProSec']").val().trim();
+        //$("input[id='txtNumClienteTFM']").val().trim();
+        //cliente.ActaConstitutiva === true ? $('#chbActaConstitutiva').prop("checked", true) : $('#chbActaConstitutiva').prop("checked", false);
+        //$("input[id='chbCIF']").val().trim();
+        //$("input[id='chbR1-SHCP']").val().trim();
+        //$("input[id='txtCURP']").val().trim();
+        //$("input[id='txtAgrupCliCtaMex']").val().trim();
+        //$("input[id='txtAgrupCliCtaAm']").val().trim();
+        //$("input[id='txtAgrupCliFede']").val().trim();
+        //$("input[id='txtAltaPor']").val().trim();
+        //$("input[id='txtFHAltaPor']").val().trim();
+        //$("#txtCliObs").val().trim();
+        //$("input[id='txtActualizo']").val().trim();
+        //$("input[id='txtFHActualizo']").val().trim();
+        //$("input[id='txtNombreCorto']").val().trim();
+        //cliente.ActivarPS === true ? $('#chbActivarPS').prop("checked", true) : $('#chbActivarPS').prop("checked", false);
+        //cliente.ActivarR8va === true ? $('#chbActivarR8va').prop("checked", true) : $('#chbActivarR8va').prop("checked", false);
+        //cliente.CliActivo === true ? $('#chbCliActivo').prop("checked", true) : $('#chbCliActivo').prop("checked", false);
+        ////#endregion
         //#endregion
-
-        //#region Otros datos
-        $("input[id='txtCliDesde']").val(cliente.CliDesde);
-        $("input[id='txtCliManejosEx']").val(cliente.CliManejosEx);
-        $("input[id='txtCliServCompEx']").val(cliente.CliServCompEx);
-        $("input[id='txtCliServCompIm']").val(cliente.CliServCompIm);
-        $("input[id='txtCliHandlingIm']").val(cliente.CliHandlingIm);
-        $("input[id='txtCliAcumTransAñoP']").val(cliente.CliAcumTransAñoP);
-        $("input[id='txtCliAcumTransAñoD']").val(cliente.CliAcumTransAñoD);
-        $("input[id='txtCliAcumPesos']").val(cliente.CliAcumPesos);
-        $("input[id='txtCliAcumDolar']").val(cliente.CliAcumDolar);
-        $("input[id='txtCliPagaPesos']").val(cliente.CliPagaPesos);
-        $("input[id='txtCliPagaDolar']").val(cliente.CliPagaDolar);
-        $("input[id='txtCliTotTrans']").val(cliente.CliTotTrans);
-        //#endregion
-
-        //#region Mas datos
-        $("input[id='txtTabID']").val(cliente.TabID);
-        $("input[id='txtTabIDImp']").val(cliente.TabIDImp);
-        $("input[id='txtTabIDCtaAm']").val(cliente.TabIDCtaAm);
-        $("input[id='txtTipPtoID']").val(cliente.TipPtoID);
-        $("input[id='txtTipPtoID1']").val(cliente.TipPtoID1);
-        cliente.CliRelAABCli === true ? $('#chbCliRelAABCli').prop("checked", true) : $('#chbCliRelAABCli').prop("checked", false);
-        cliente.CliRelAAPro === true ? $('#chbCliRelAABPro').prop("checked", true) : $('#chbCliRelAABPro').prop("checked", false);
-        cliente.CliRelAABPag === true ? $('#chbCliRelAABPag').prop("checked", true) : $('#chbCliRelAABPag').prop("checked", false);
-        cliente.CliRelAABDes === true ? $('#chbCliRelAABDes').prop("checked", true) : $('#chbCliRelAABDes').prop("checked", false);
-        cliente.CliManejosEsp === true ? $('#chbCliManejosEsp').prop("checked", true) : $('#chbCliManejosEsp').prop("checked", false);
-        $("input[id='txtCliFactA']").val().trim();
-        $("input[id='txtCliViaMensajes']").val().trim();
-        $("input[id='txtCliFacDescuento']").val().trim();
-
-        $("input[id='txtCliFactHonorarios']").val().trim();
-        $("input[id='txtCliFactHonorariosImp']").val().trim();
-        $("input[id='txtRegOrigId']").val().trim();
-        $("input[id='txtMetValID']").val().trim();
-        cliente.CliPITEX === true ? $('#chbCliPITEX').prop("checked", true) : $('#chbCliPITEX').prop("checked", false);
-        cliente.CliMaquiladora === true ? $('#chbCliMaquiladora').prop("checked", true) : $('#chbCliMaquiladora').prop("checked", false);
-        cliente.CliEnvaMatriz === true ? $('#chbCliEnvaMatriz').prop("checked", true) : $('#chbCliEnvaMatriz').prop("checked", false);
-        cliente.CliRegla8a === true ? $('#chbCliRegla8a').prop("checked", true) : $('#chbCliRegla8a').prop("checked", false);
-        $("input[id='txtCliPasswordInternet']").val().trim();
-        $("input[id='txtCliFraccionR8a']").val().trim();
-        //#endregion
-
-        //#region y mas datos
-        $("input[id='txtCliColonia']").val().trim();
-        $("input[id='txtCliEsquina']").val().trim();
-        $("input[id='txtCliSector']").val().trim();
-        $("input[id='txtImpAraID']").val().trim();
-        $("input[id='txtIDProSec']").val().trim();
-        $("input[id='txtNumClienteTFM']").val().trim();
-        cliente.ActaConstitutiva === true ? $('#chbActaConstitutiva').prop("checked", true) : $('#chbActaConstitutiva').prop("checked", false);
-        $("input[id='chbCIF']").val().trim();
-        $("input[id='chbR1-SHCP']").val().trim();
-        $("input[id='txtCURP']").val().trim();
-        $("input[id='txtAgrupCliCtaMex']").val().trim();
-        $("input[id='txtAgrupCliCtaAm']").val().trim();
-        $("input[id='txtAgrupCliFede']").val().trim();
-        $("input[id='txtAltaPor']").val().trim();
-        $("input[id='txtFHAltaPor']").val().trim();
-        $("#txtCliObs").val().trim();
-        $("input[id='txtActualizo']").val().trim();
-        $("input[id='txtFHActualizo']").val().trim();
-        $("input[id='txtNombreCorto']").val().trim();
-        cliente.chbActivarPS === true ? $('#chbActivarPS').prop("checked", true) : $('#chbActivarPS').prop("checked", false);
-        cliente.ActivarR8va === true ? $('#chbActivarR8va').prop("checked", true) : $('#chbActivarR8va').prop("checked", false);
-        cliente.CliActivo === true ? $('#chbCliActivo').prop("checked", true) : $('#chbCliActivo').prop("checked", false);
-        //#endregion
-
     </script>
 
 }
